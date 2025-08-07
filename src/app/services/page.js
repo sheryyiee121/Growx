@@ -6,7 +6,11 @@ import {
     CheckCircle,
     ArrowRight,
     Star,
-    Check
+    Check,
+    Award,
+    Target,
+    TrendingUp,
+    Headphones
 } from 'lucide-react';
 
 export default function ServicesPage() {
@@ -332,53 +336,76 @@ export default function ServicesPage() {
                     </div>
 
                     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-                        <div className="text-center">
-                            <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <img
-                                    src="/images/icons/award.png"
-                                    alt="Award"
-                                    className="w-8 h-8 object-contain filter brightness-0 invert"
-                                    onError={(e) => e.target.style.display = 'none'}
-                                />
+                        {/* Expert Knowledge Card */}
+                        <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-500 hover:scale-105 border border-gray-100 group">
+                            <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                                <Award className="w-10 h-10 text-white" />
                             </div>
-                            <h3 className="text-xl font-bold text-gray-900 mb-2">Expert Knowledge</h3>
-                            <p className="text-gray-600">Specialized expertise in complex insurance and financial regulations</p>
+                            <div className="text-center">
+                                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-green-600 transition-colors duration-300">Expert Knowledge</h3>
+                                <p className="text-gray-600 leading-relaxed">Specialized expertise in complex insurance and financial regulations</p>
+                            </div>
+                            <div className="mt-6 pt-6 border-t border-gray-100">
+                                <div className="flex items-center justify-center">
+                                    <div className="w-2 h-2 bg-green-500 rounded-full mx-1"></div>
+                                    <div className="w-2 h-2 bg-green-400 rounded-full mx-1"></div>
+                                    <div className="w-2 h-2 bg-green-300 rounded-full mx-1"></div>
+                                </div>
+                            </div>
                         </div>
-                        <div className="text-center">
-                            <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <img
-                                    src="/images/icons/target.png"
-                                    alt="Target"
-                                    className="w-8 h-8 object-contain filter brightness-0 invert"
-                                    onError={(e) => e.target.style.display = 'none'}
-                                />
+
+                        {/* Personalized Solutions Card */}
+                        <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-500 hover:scale-105 border border-gray-100 group">
+                            <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                                <Target className="w-10 h-10 text-white" />
                             </div>
-                            <h3 className="text-xl font-bold text-gray-900 mb-2">Personalized Solutions</h3>
-                            <p className="text-gray-600">Tailored approaches based on your unique situation and needs</p>
+                            <div className="text-center">
+                                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors duration-300">Personalized Solutions</h3>
+                                <p className="text-gray-600 leading-relaxed">Tailored approaches based on your unique situation and needs</p>
+                            </div>
+                            <div className="mt-6 pt-6 border-t border-gray-100">
+                                <div className="flex items-center justify-center">
+                                    <div className="w-2 h-2 bg-blue-500 rounded-full mx-1"></div>
+                                    <div className="w-2 h-2 bg-blue-400 rounded-full mx-1"></div>
+                                    <div className="w-2 h-2 bg-blue-300 rounded-full mx-1"></div>
+                                </div>
+                            </div>
                         </div>
-                        <div className="text-center">
-                            <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <img
-                                    src="/images/icons/trending-up.png"
-                                    alt="Trending Up"
-                                    className="w-8 h-8 object-contain filter brightness-0 invert"
-                                    onError={(e) => e.target.style.display = 'none'}
-                                />
+
+                        {/* Proven Results Card */}
+                        <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-500 hover:scale-105 border border-gray-100 group">
+                            <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                                <TrendingUp className="w-10 h-10 text-white" />
                             </div>
-                            <h3 className="text-xl font-bold text-gray-900 mb-2">Proven Results</h3>
-                            <p className="text-gray-600">Track record of successful outcomes and client satisfaction</p>
+                            <div className="text-center">
+                                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-purple-600 transition-colors duration-300">Proven Results</h3>
+                                <p className="text-gray-600 leading-relaxed">Track record of successful outcomes and client satisfaction</p>
+                            </div>
+                            <div className="mt-6 pt-6 border-t border-gray-100">
+                                <div className="flex items-center justify-center">
+                                    <div className="w-2 h-2 bg-purple-500 rounded-full mx-1"></div>
+                                    <div className="w-2 h-2 bg-purple-400 rounded-full mx-1"></div>
+                                    <div className="w-2 h-2 bg-purple-300 rounded-full mx-1"></div>
+                                </div>
+                            </div>
                         </div>
-                        <div className="text-center">
-                            <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <img
-                                    src="/images/icons/phone.png"
-                                    alt="Phone"
-                                    className="w-8 h-8 object-contain filter brightness-0 invert"
-                                    onError={(e) => e.target.style.display = 'none'}
-                                />
+
+                        {/* Ongoing Support Card */}
+                        <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-500 hover:scale-105 border border-gray-100 group">
+                            <div className="w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                                <Headphones className="w-10 h-10 text-white" />
                             </div>
-                            <h3 className="text-xl font-bold text-gray-900 mb-2">Ongoing Support</h3>
-                            <p className="text-gray-600">Continuous assistance throughout your journey</p>
+                            <div className="text-center">
+                                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-orange-600 transition-colors duration-300">Ongoing Support</h3>
+                                <p className="text-gray-600 leading-relaxed">Continuous assistance throughout your journey</p>
+                            </div>
+                            <div className="mt-6 pt-6 border-t border-gray-100">
+                                <div className="flex items-center justify-center">
+                                    <div className="w-2 h-2 bg-orange-500 rounded-full mx-1"></div>
+                                    <div className="w-2 h-2 bg-orange-400 rounded-full mx-1"></div>
+                                    <div className="w-2 h-2 bg-orange-300 rounded-full mx-1"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -409,8 +436,8 @@ export default function ServicesPage() {
                                 onError={(e) => e.target.style.display = 'none'}
                             />
                             <h3 className="text-lg font-semibold text-gray-900 mb-2">Call Us</h3>
-                            <p className="text-gray-600">+1 (555) 123-4567</p>
-                            <p className="text-sm text-gray-500">Mon-Fri: 9AM-6PM EST</p>
+                            <p className="text-gray-600">+918961142973</p>
+                            <p className="text-sm text-gray-500">8:30am est to 7:30pm est</p>
                         </div>
                         <div className="text-center">
                             <img
@@ -420,7 +447,7 @@ export default function ServicesPage() {
                                 onError={(e) => e.target.style.display = 'none'}
                             />
                             <h3 className="text-lg font-semibold text-gray-900 mb-2">Email Us</h3>
-                            <p className="text-gray-600">hello@growx.com</p>
+                            <p className="text-gray-600">www.growxmarketingservices@gmail.com</p>
                             <p className="text-sm text-gray-500">24/7 support available</p>
                         </div>
                         <div className="text-center">
@@ -431,8 +458,7 @@ export default function ServicesPage() {
                                 onError={(e) => e.target.style.display = 'none'}
                             />
                             <h3 className="text-lg font-semibold text-gray-900 mb-2">Visit Us</h3>
-                            <p className="text-gray-600">123 Business Ave, Suite 100</p>
-                            <p className="text-sm text-gray-500">New York, NY 10001</p>
+                            <p className="text-gray-600">Bhavya Corporate Tower, Vibhuti Khand, Lucknow, Uttar Pradesh, Gomti Nagar, Vibhuti Khand-226010</p>
                         </div>
                     </div>
                 </div>

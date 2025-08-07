@@ -11,21 +11,21 @@ export default function ContactPage() {
         {
             image: '/images/phone.png',
             title: 'Phone',
-            detail: '+1 (555) 123-4567',
-            description: 'Mon-Fri from 8am to 6pm PST',
+            detail: '+918961142973',
+            description: '8:30am Est to 7:30pm Est',
             color: 'bg-green-500'
         },
         {
             image: '/images/email.png',
             title: 'Email',
-            detail: 'hello@growx.com',
+            detail: 'www.growxmarketingservices@gmail.com',
             description: 'We respond within 24 hours',
             color: 'bg-blue-500'
         },
         {
             image: '/images/visitus.png',
             title: 'Office',
-            detail: 'San Francisco, CA',
+            detail: 'Bhavya Corporate Tower, Vibhuti Khand, Lucknow, Uttar Pradesh, Gomti Nagar, Vibhuti Khand-226010',
             description: '123 Business District, Suite 400',
             color: 'bg-purple-500'
         },
@@ -169,7 +169,7 @@ export default function ContactPage() {
                                             className="w-5 h-5 object-contain"
                                             onError={(e) => e.target.style.display = 'none'}
                                         />
-                                        <span className="font-medium text-gray-900">+1 (555) 123-4567</span>
+                                        <span className="font-medium text-gray-900">+918961142973</span>
                                     </div>
                                     <div className="flex items-center space-x-3">
                                         <img
@@ -178,7 +178,7 @@ export default function ContactPage() {
                                             className="w-5 h-5 object-contain"
                                             onError={(e) => e.target.style.display = 'none'}
                                         />
-                                        <span className="font-medium text-gray-900">hello@growx.com</span>
+                                        <span className="font-medium text-gray-900">www.growxmarketingservices@gmail.com</span>
                                     </div>
                                     <div className="flex items-center space-x-3">
                                         <img

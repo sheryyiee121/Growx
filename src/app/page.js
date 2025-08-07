@@ -183,7 +183,7 @@ export default function Home() {
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-6">
               Every step forward is a step toward{' '}
               <span className="relative">
-                financial security
+                Financial Security
                 <div className="absolute bottom-2 left-0 w-full h-2 bg-green-500 -z-10 transform -skew-x-12"></div>
               </span>
             </h2>
@@ -313,28 +313,28 @@ export default function Home() {
                         <Phone className="w-6 h-6 text-green-500 mr-4" />
                         <div>
                           <p className="font-semibold text-gray-900">Phone</p>
-                          <p className="text-gray-600">+1 (555) 123-4567</p>
+                          <p className="text-gray-600">+92 (555) 123-4567</p>
                         </div>
                       </div>
                       <div className="flex items-center">
                         <Mail className="w-6 h-6 text-green-500 mr-4" />
                         <div>
                           <p className="font-semibold text-gray-900">Email</p>
-                          <p className="text-gray-600">hello@growx.com</p>
+                          <p className="text-gray-600">www.growxmarketingservices@gmail.com</p>
                         </div>
                       </div>
                       <div className="flex items-center">
                         <MapPin className="w-6 h-6 text-green-500 mr-4" />
                         <div>
                           <p className="font-semibold text-gray-900">Address</p>
-                          <p className="text-gray-600">123 Business Ave, Suite 100<br />New York, NY 10001</p>
+                          <p className="text-gray-600">Bhavya Corporate Tower, Vibhuti Khand, Lucknow, Uttar Pradesh, Gomti Nagar, Vibhuti Khand-226010</p>
                         </div>
                       </div>
                       <div className="flex items-center">
                         <Clock className="w-6 h-6 text-green-500 mr-4" />
                         <div>
                           <p className="font-semibold text-gray-900">Business Hours</p>
-                          <p className="text-gray-600">Mon-Fri: 9AM-6PM EST</p>
+                          <p className="text-gray-600">8:30am Est to 7:30pm Est</p>
                         </div>
                       </div>
                     </div>
