@@ -1,0 +1,442 @@
+'use client';
+
+import { useState } from 'react';
+import Navbar from '../../components/Navbar';
+import {
+    CheckCircle,
+    ArrowRight,
+    Star,
+    Check
+} from 'lucide-react';
+
+export default function ServicesPage() {
+    const [activeService, setActiveService] = useState(0);
+
+    const services = [
+        {
+            id: 0,
+            title: "Affordable Care Act (ACA)",
+            image: "/aca.jpg",
+            description: "Expert guidance through ACA enrollment and compliance",
+            features: [
+                "ACA enrollment assistance",
+                "Compliance consulting",
+                "Plan comparison and selection",
+                "Subsidy qualification help",
+                "Annual renewal support",
+                "Documentation assistance"
+            ],
+            benefits: [
+                "Save up to 90% on premiums",
+                "Access to quality healthcare"
+
+            ],
+            color: "bg-blue-500",
+            bgColor: "bg-blue-50"
+        },
+        {
+            id: 1,
+            title: "Final Expense Insurance",
+            image: "/finalexpense.jpg",
+            description: "Comprehensive end-of-life expense coverage solutions",
+            features: [
+                "Burial and funeral expense coverage",
+                "Medical expense protection",
+                "Simplified underwriting process",
+                "Guaranteed acceptance options",
+                "Flexible payment plans",
+                "Family protection planning"
+            ],
+            benefits: [
+                "Protect your family from financial burden",
+                "Guaranteed acceptance for seniors",
+                "No medical exam required",
+                "Immediate coverage options"
+            ],
+            color: "bg-purple-500",
+            bgColor: "bg-purple-50"
+        },
+        {
+            id: 2,
+            title: "Auto Insurance",
+            image: "/setttle.jpg",
+            description: "Complete auto insurance solutions for all drivers",
+            features: [
+                "Liability coverage",
+                "Collision and comprehensive",
+                "Uninsured motorist protection",
+                "Personal injury protection",
+                "Roadside assistance",
+                "Multi-vehicle discounts"
+            ],
+            benefits: [
+                "Competitive rates from top carriers",
+                "24/7 claims support",
+                "Multi-policy discounts",
+                "Flexible payment options"
+            ],
+            color: "bg-green-500",
+            bgColor: "bg-green-50"
+        },
+        {
+            id: 3,
+            title: "Social Security Disability Insurance",
+            image: "/social.jpg",
+            description: "Professional SSDI application and appeal assistance",
+            features: [
+                "Initial application assistance",
+                "Appeal representation",
+                "Medical evidence gathering",
+                "Hearing preparation",
+                "Benefit calculation",
+                "Ongoing case management"
+            ],
+            benefits: [
+                "Expert representation throughout process",
+                "Higher approval rates",
+                "No upfront fees",
+                "Comprehensive case management"
+            ],
+            color: "bg-orange-500",
+            bgColor: "bg-orange-50"
+        },
+        {
+            id: 4,
+            title: "Debt Settlement",
+            image: "/dbt.jpg",
+            description: "Strategic debt relief and settlement solutions",
+            features: [
+                "Debt negotiation services",
+                "Creditor communication",
+                "Payment plan structuring",
+                "Legal protection",
+                "Credit repair assistance",
+                "Financial education"
+            ],
+            benefits: [
+                "Reduce debt by up to 50%",
+                "Stop collection calls",
+                "Single monthly payment",
+                "Professional negotiation"
+            ],
+            color: "bg-red-500",
+            bgColor: "bg-red-50"
+        }
+    ];
+
+
+
+    return (
+        <div className="min-h-screen bg-white">
+            <Navbar />
+
+
+
+            {/* Services Overview */}
+            <section className="py-32 bg-white">
+                <div className="container mx-auto px-6">
+                    <div className="text-center mb-12">
+                        <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-6">
+                            Our Specialized{' '}
+                            <span className="relative">
+                                Services
+                                <div className="absolute bottom-2 left-0 w-full h-2 bg-green-500 -z-10 transform -skew-x-12"></div>
+                            </span>
+                        </h2>
+                        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                            We specialize in complex insurance and financial services, providing expert guidance through every step of the process.
+                        </p>
+                    </div>
+
+                    {/* Service Cards */}
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                        {services.map((service, index) => (
+                            <div
+                                key={service.id}
+                                className={`bg-green-50 rounded-xl shadow-lg border-2 border-green-200 hover:shadow-xl transition-all duration-500 hover:scale-105 cursor-pointer overflow-hidden ${activeService === index ? 'border-green-500 shadow-xl' : ''
+                                    }`}
+                                onClick={() => setActiveService(index)}
+                            >
+                                {/* Service Image */}
+                                <div className="relative h-48 bg-green-50">
+                                    <img
+                                        src={service.image}
+                                        alt={service.title}
+                                        className="w-full h-full object-cover"
+                                        onError={(e) => {
+                                            e.target.style.display = 'none';
+                                            e.target.nextSibling.style.display = 'flex';
+                                        }}
+                                    />
+                                    <div className="absolute inset-0 bg-green-600 bg-opacity-20 hidden">
+                                        <div className={`absolute top-4 right-4 w-12 h-12 ${service.color} rounded-full flex items-center justify-center`}>
+                                            <img
+                                                src={service.image}
+                                                alt={service.title}
+                                                className="w-6 h-6 object-contain filter brightness-0 invert"
+                                                onError={(e) => e.target.style.display = 'none'}
+                                            />
+                                        </div>
+                                        <div className="absolute bottom-4 left-4">
+                                            <h3 className="text-xl font-bold text-white mb-1 drop-shadow-lg">{service.title}</h3>
+                                            <p className="text-white text-sm opacity-90 drop-shadow-lg">{service.description}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="p-6">
+                                    <div className="flex items-center justify-between mb-4">
+                                        <span className="text-sm font-semibold text-gray-500">KEY FEATURES</span>
+                                        {activeService === index && (
+                                            <CheckCircle className="w-5 h-5 text-green-500" />
+                                        )}
+                                    </div>
+                                    <ul className="space-y-2">
+                                        {service.features.slice(0, 3).map((feature, idx) => (
+                                            <li key={idx} className="flex items-center text-sm text-gray-600">
+                                                <div className={`w-2 h-2 ${service.color} rounded-full mr-3`}></div>
+                                                {feature}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Detailed Service Section */}
+            <section className="py-32 bg-gray-50">
+                <div className="container mx-auto px-6">
+                    <div className="max-w-6xl mx-auto">
+                        <div className="grid lg:grid-cols-2 gap-12 items-start">
+                            {/* Service Details */}
+                            <div className="space-y-8">
+                                <div>
+                                    {/* Service Image */}
+                                    <div className="relative h-64 bg-green-50 rounded-xl mb-6 overflow-hidden">
+                                        <img
+                                            src={services[activeService].image}
+                                            alt={services[activeService].title}
+                                            className="w-full h-full object-cover"
+                                            onError={(e) => {
+                                                e.target.style.display = 'none';
+                                                e.target.nextSibling.style.display = 'flex';
+                                            }}
+                                        />
+                                        <div className="absolute inset-0 bg-green-600 bg-opacity-30 hidden">
+                                            <div className={`absolute top-6 right-6 w-16 h-16 ${services[activeService].color} rounded-full flex items-center justify-center`}>
+                                                <img
+                                                    src={services[activeService].image}
+                                                    alt={services[activeService].title}
+                                                    className="w-8 h-8 object-contain filter brightness-0 invert"
+                                                    onError={(e) => e.target.style.display = 'none'}
+                                                />
+                                            </div>
+                                            <div className="absolute bottom-6 left-6">
+                                                <h2 className="text-3xl font-bold text-white mb-2 drop-shadow-lg">{services[activeService].title}</h2>
+                                                <p className="text-white text-lg opacity-90 drop-shadow-lg">{services[activeService].description}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <h3 className="text-xl font-semibold text-gray-900 mb-4">What We Offer</h3>
+                                        <ul className="space-y-3">
+                                            {services[activeService].features.map((feature, idx) => (
+                                                <li key={idx} className="flex items-start">
+                                                    <CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
+                                                    <span className="text-gray-700">{feature}</span>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+
+                                    <div>
+                                        <h3 className="text-xl font-semibold text-gray-900 mb-4">Key Benefits</h3>
+                                        <div className="grid gap-3">
+                                            {services[activeService].benefits.map((benefit, idx) => (
+                                                <div key={idx} className="bg-white p-4 rounded-lg border border-gray-200">
+                                                    <div className="flex items-center">
+                                                        <Star className="w-5 h-5 text-yellow-500 mr-3" />
+                                                        <span className="text-gray-700 font-medium">{benefit}</span>
+                                                    </div>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Contact Form */}
+                            <div className="bg-white p-8 rounded-xl shadow-lg">
+                                <h3 className="text-2xl font-bold text-gray-900 mb-6">Get Expert Guidance</h3>
+                                <form className="space-y-6">
+                                    <div className="grid md:grid-cols-2 gap-4">
+                                        <div>
+                                            <label className="block text-sm font-medium text-gray-700 mb-2">First Name</label>
+                                            <input type="text" className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent" />
+                                        </div>
+                                        <div>
+                                            <label className="block text-sm font-medium text-gray-700 mb-2">Last Name</label>
+                                            <input type="text" className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent" />
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label className="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                                        <input type="email" className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent" />
+                                    </div>
+                                    <div>
+                                        <label className="block text-sm font-medium text-gray-700 mb-2">Phone</label>
+                                        <input type="tel" className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent" />
+                                    </div>
+                                    <div>
+                                        <label className="block text-sm font-medium text-gray-700 mb-2">Service Interest</label>
+                                        <select className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                                            <option>Select a service</option>
+                                            {services.map((service) => (
+                                                <option key={service.id}>{service.title}</option>
+                                            ))}
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label className="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                                        <textarea rows="4" className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent" placeholder="Tell us about your needs..."></textarea>
+                                    </div>
+                                    <button type="submit" className="w-full bg-green-500 text-white py-3 rounded-lg font-semibold transition-all duration-500 hover:bg-green-600 hover:scale-105">
+                                        Get Free Consultation
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+            {/* Why Choose Us */}
+            <section className="py-32 bg-white">
+                <div className="container mx-auto px-6">
+                    <div className="text-center mb-12">
+                        <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-6">
+                            Why Choose{' '}
+                            <span className="relative">
+                                Our Expertise
+                                <div className="absolute bottom-2 left-0 w-full h-2 bg-green-500 -z-10"></div>
+                            </span>
+                        </h2>
+                        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                            We bring years of specialized experience in insurance and financial services to help you make informed decisions.
+                        </p>
+                    </div>
+
+                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+                        <div className="text-center">
+                            <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <img
+                                    src="/images/icons/award.png"
+                                    alt="Award"
+                                    className="w-8 h-8 object-contain filter brightness-0 invert"
+                                    onError={(e) => e.target.style.display = 'none'}
+                                />
+                            </div>
+                            <h3 className="text-xl font-bold text-gray-900 mb-2">Expert Knowledge</h3>
+                            <p className="text-gray-600">Specialized expertise in complex insurance and financial regulations</p>
+                        </div>
+                        <div className="text-center">
+                            <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <img
+                                    src="/images/icons/target.png"
+                                    alt="Target"
+                                    className="w-8 h-8 object-contain filter brightness-0 invert"
+                                    onError={(e) => e.target.style.display = 'none'}
+                                />
+                            </div>
+                            <h3 className="text-xl font-bold text-gray-900 mb-2">Personalized Solutions</h3>
+                            <p className="text-gray-600">Tailored approaches based on your unique situation and needs</p>
+                        </div>
+                        <div className="text-center">
+                            <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <img
+                                    src="/images/icons/trending-up.png"
+                                    alt="Trending Up"
+                                    className="w-8 h-8 object-contain filter brightness-0 invert"
+                                    onError={(e) => e.target.style.display = 'none'}
+                                />
+                            </div>
+                            <h3 className="text-xl font-bold text-gray-900 mb-2">Proven Results</h3>
+                            <p className="text-gray-600">Track record of successful outcomes and client satisfaction</p>
+                        </div>
+                        <div className="text-center">
+                            <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <img
+                                    src="/images/icons/phone.png"
+                                    alt="Phone"
+                                    className="w-8 h-8 object-contain filter brightness-0 invert"
+                                    onError={(e) => e.target.style.display = 'none'}
+                                />
+                            </div>
+                            <h3 className="text-xl font-bold text-gray-900 mb-2">Ongoing Support</h3>
+                            <p className="text-gray-600">Continuous assistance throughout your journey</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Contact Section */}
+            <section className="py-32 bg-gray-50">
+                <div className="container mx-auto px-6">
+                    <div className="text-center mb-12">
+                        <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-6">
+                            Ready to Get{' '}
+                            <span className="relative">
+                                Started?
+                                <div className="absolute bottom-2 left-0 w-full h-2 bg-green-500 -z-10"></div>
+                            </span>
+                        </h2>
+                        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                            Contact us today for a free consultation and let our experts guide you through your insurance and financial needs.
+                        </p>
+                    </div>
+
+                    <div className="grid lg:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                        <div className="text-center">
+                            <img
+                                src="/images/phone.png"
+                                alt="Phone"
+                                className="w-8 h-8 object-contain mx-auto mb-4"
+                                onError={(e) => e.target.style.display = 'none'}
+                            />
+                            <h3 className="text-lg font-semibold text-gray-900 mb-2">Call Us</h3>
+                            <p className="text-gray-600">+1 (555) 123-4567</p>
+                            <p className="text-sm text-gray-500">Mon-Fri: 9AM-6PM EST</p>
+                        </div>
+                        <div className="text-center">
+                            <img
+                                src="/images/email.gif"
+                                alt="Email"
+                                className="w-8 h-8 object-contain mx-auto mb-4"
+                                onError={(e) => e.target.style.display = 'none'}
+                            />
+                            <h3 className="text-lg font-semibold text-gray-900 mb-2">Email Us</h3>
+                            <p className="text-gray-600">hello@growx.com</p>
+                            <p className="text-sm text-gray-500">24/7 support available</p>
+                        </div>
+                        <div className="text-center">
+                            <img
+                                src="/images/visitus.png"
+                                alt="Location"
+                                className="w-8 h-8 object-contain mx-auto mb-4"
+                                onError={(e) => e.target.style.display = 'none'}
+                            />
+                            <h3 className="text-lg font-semibold text-gray-900 mb-2">Visit Us</h3>
+                            <p className="text-gray-600">123 Business Ave, Suite 100</p>
+                            <p className="text-sm text-gray-500">New York, NY 10001</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    );
+} 
