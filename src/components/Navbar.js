@@ -100,7 +100,7 @@ export default function Navbar() {
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center h-20">
                     {/* Logo Section */}
-                    <div className="flex items-center space-x-3">
+                    <div className="flex items-center space-x-3 flex-1 lg:flex-initial">
                         <div className="w-16 h-16 relative">
                             <Image
                                 src="/images/logo.jpg"
@@ -136,7 +136,7 @@ export default function Navbar() {
                     </div>
 
                     {/* Mobile Menu Button */}
-                    <div className="lg:hidden">
+                    <div className="lg:hidden ml-auto">
                         <button
                             onClick={toggleMenu}
                             className="text-gray-600 hover:text-gray-900 transition-colors duration-200 p-2 focus:outline-none"

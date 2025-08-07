@@ -82,7 +82,7 @@ export default function Home() {
       </section>
 
       {/* Background Image Section with Overlay Content */}
-      <section className="relative min-h-screen overflow-hidden">
+      <section className="relative min-h-screen overflow-hidden mt-8 md:mt-16">
         {/* Background Image */}
         <div className="absolute inset-0">
           <img

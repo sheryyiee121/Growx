@@ -7,7 +7,7 @@ import { ArrowRight, TrendingUp, Users, Phone } from 'lucide-react';
 export default function HeroSection() {
     return (
         <section
-            className="min-h-screen bg-gradient-to-br from-green-50/30 via-white to-green-100/40 flex items-center justify-center relative overflow-hidden pt-20"
+            className="min-h-screen bg-gradient-to-br from-green-50/30 via-white to-green-100/40 flex items-center justify-center relative overflow-hidden pt-32 md:pt-20"
             aria-labelledby="hero-heading"
         >
             <div className="w-full max-w-7xl mx-auto px-6">
