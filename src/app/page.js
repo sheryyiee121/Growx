@@ -233,7 +233,7 @@ export default function Home() {
               </div>
               <h3 className="text-xl font-bold text-green-700 mb-4">Connect</h3>
               <p className="text-gray-600">
-                Take the first step by booking a free consultation. We'll understand your insurance and financial needs to ensure we're the right fit for you.
+                Take the first step by booking a free consultation. We&apos;ll understand your insurance and financial needs to ensure we&apos;re the right fit for you.
               </p>
             </div>
 
@@ -244,7 +244,7 @@ export default function Home() {
               </div>
               <h3 className="text-xl font-bold text-green-700 mb-4">Explore</h3>
               <p className="text-gray-600">
-                Through detailed analysis, we'll explore your current situation and develop personalized strategies for your insurance and financial goals.
+                Through detailed analysis, we&apos;ll explore your current situation and develop personalized strategies for your insurance and financial goals.
               </p>
             </div>
 
@@ -294,10 +294,10 @@ export default function Home() {
             <div className="flex-1 animate-slide-up">
               <ContactForm
                 title="Send us a message"
-                description="Ready to get started? Fill out the form below and we'll get back to you within 24 hours."
+                description="Ready to get started? Fill out the form below and we&apos;ll get back to you within 24 hours."
                 submitButtonText="Get Free Consultation"
-                successTitle="We're excited to work with you!"
-                successMessage="We've received your information and will contact you within 24 hours to discuss your lead generation needs."
+                successTitle="We&apos;re excited to work with you!"
+                successMessage="We&apos;ve received your information and will contact you within 24 hours to discuss your lead generation needs."
                 className="bg-gray-50 h-full"
               />
             </div>
@@ -418,7 +418,7 @@ export default function Home() {
           {/* CTA Section */}
           <div className="text-center mt-12">
             <p className="text-lg text-gray-600 mb-6">
-              Still have questions? We're here to help!
+              Still have questions? We&apos;re here to help!
             </p>
             <div className="flex justify-center space-x-4">
               <button className="bg-green-500 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-500 hover:bg-green-600 hover:scale-105 hover:shadow-lg active:scale-95 transform">

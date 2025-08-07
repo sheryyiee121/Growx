@@ -18,7 +18,7 @@ import { Send, CheckCircle } from 'lucide-react';
  */
 export default function ContactForm({
     title = "Send us a message",
-    description = "Fill out the form below and we'll get back to you within 24 hours.",
+    description = "Fill out the form below and we&apos;ll get back to you within 24 hours.",
     services = [
         'Lead Generation',
         'Cold Calling Services',
@@ -29,7 +29,7 @@ export default function ContactForm({
     ],
     submitButtonText = "Send Message",
     successTitle = "Thank You!",
-    successMessage = "We've received your message and will get back to you within 24 hours.",
+    successMessage = "We&apos;ve received your message and will get back to you within 24 hours.",
     onSubmit = null,
     showServices = true,
     className = ""

@@ -72,7 +72,7 @@ export default function ContactPage() {
                             With Our Team
                         </h1>
                         <p className="text-xl text-gray-600 leading-relaxed mb-8">
-                            Ready to transform your business with our lead generation services? Let's discuss how we can help you achieve your sales goals.
+                            Ready to transform your business with our lead generation services? Let&apos;s discuss how we can help you achieve your sales goals.
                         </p>
                         <div className="flex justify-center space-x-4">
                             <button className="bg-green-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-500 hover:bg-green-800 hover:scale-105 hover:shadow-lg active:scale-95 transform flex items-center gap-2">
@@ -203,7 +203,7 @@ export default function ContactPage() {
                         Ready to Start Your Journey?
                     </h2>
                     <p className="text-green-100 mb-8 max-w-2xl mx-auto text-lg">
-                        Don't wait any longer. Get in touch today and let's discuss how we can transform your business.
+                        Don&apos;t wait any longer. Get in touch today and let&apos;s discuss how we can transform your business.
                     </p>
                     <button className="bg-white text-green-700 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-500 hover:bg-gray-100 hover:scale-105 active:scale-95 transform flex items-center gap-2 mx-auto">
                         Schedule Free Consultation

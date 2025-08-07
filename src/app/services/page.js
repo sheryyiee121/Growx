@@ -322,8 +322,8 @@ export default function ServicesPage() {
                         <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-6">
                             Why Choose{' '}
                             <span className="relative">
-                                Our Expertise
-                                <div className="absolute bottom-2 left-0 w-full h-2 bg-green-500 -z-10"></div>
+                                Us?
+                                <div className="absolute bottom-2 left-0 w-full h-2 bg-green-500 -z-10 transform -skew-x-12"></div>
                             </span>
                         </h2>
                         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -392,7 +392,7 @@ export default function ServicesPage() {
                             Ready to Get{' '}
                             <span className="relative">
                                 Started?
-                                <div className="absolute bottom-2 left-0 w-full h-2 bg-green-500 -z-10"></div>
+                                <div className="absolute bottom-2 left-0 w-full h-2 bg-green-500 -z-10 transform -skew-x-12"></div>
                             </span>
                         </h2>
                         <p className="text-xl text-gray-600 max-w-3xl mx-auto">

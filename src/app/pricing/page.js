@@ -131,7 +131,7 @@ export default function PricingPage() {
                         <div className="bg-white p-8 rounded-3xl shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-500 hover:scale-105">
                             <div className="mb-8">
                                 <h3 className="text-2xl font-bold text-gray-900 mb-6">Project based</h3>
-                                <p className="text-gray-600 mb-8">You have a defined scope and don't need us to continuing supporting it.</p>
+                                <p className="text-gray-600 mb-8">You have a defined scope and don&apos;t need us to continuing supporting it.</p>
                                 <div className="mb-8">
                                     <span className="text-5xl font-bold text-gray-900">Custom</span>
                                 </div>
