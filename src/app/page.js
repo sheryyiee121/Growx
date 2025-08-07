@@ -391,7 +391,7 @@ export default function Home() {
                   className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-300 focus:outline-none"
                   onClick={() => toggleFAQ(index)}
                 >
-                  <h3 className="text-lg font-semibold text-gray-900 pr-4">{faq.question}</h3>
+                  <h3 className="text-lg font-medium text-gray-900 pr-4">{faq.question}</h3>
                   <svg
                     className={`w-5 h-5 text-gray-500 transform transition-transform duration-300 ${openFAQ === index ? 'rotate-180' : ''}`}
                     fill="none"

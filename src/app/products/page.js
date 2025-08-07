@@ -122,10 +122,10 @@ export default function ProductsPage() {
             <Navbar />
 
             {/* Hero Section */}
-            <section className="pt-28 pb-16 bg-gradient-to-br from-green-50/30 via-white to-green-100/40">
+            <section className="pt-36 md:pt-32 pb-20 bg-gradient-to-br from-green-50/30 via-white to-green-100/40 animate-fade-in">
                 <div className="container mx-auto px-6">
                     <div className="text-center max-w-4xl mx-auto">
-                        <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
+                        <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6 animate-slide-up">
                             Powerful{' '}
                             <span className="relative">
                                 Products
@@ -134,10 +134,10 @@ export default function ProductsPage() {
                             <br />
                             That Drive Results
                         </h1>
-                        <p className="text-xl text-gray-600 leading-relaxed mb-8">
+                        <p className="text-xl text-gray-600 leading-relaxed mb-8 animate-slide-up" style={{ animationDelay: '0.2s' }}>
                             Choose from our comprehensive suite of lead generation and sales optimization products designed to accelerate your business growth.
                         </p>
-                        <div className="flex justify-center space-x-4">
+                        <div className="flex justify-center space-x-4 animate-slide-up" style={{ animationDelay: '0.4s' }}>
                             <button className="bg-green-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-500 hover:bg-green-800 hover:scale-105 hover:shadow-lg active:scale-95 transform flex items-center gap-2">
                                 View Products
                                 <ArrowRight className="w-5 h-5" />
@@ -151,14 +151,14 @@ export default function ProductsPage() {
             </section>
 
             {/* Stats Section */}
-            <section className="py-32 bg-white">
+            <section className="py-32 bg-white animate-fade-in">
                 <div className="container mx-auto px-6">
                     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
                         {stats.map((stat, index) => {
                             const StatIcon = stat.icon;
                             return (
-                                <div key={index} className="text-center animate-slide-up" style={{ animationDelay: `${index * 0.1}s` }}>
-                                    <div className={`w-16 h-16 ${stat.color} bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4`}>
+                                <div key={index} className="text-center animate-slide-up hover:scale-105 transition-transform duration-300" style={{ animationDelay: `${index * 0.2}s` }}>
+                                    <div className={`w-16 h-16 ${stat.color} bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4 hover:bg-opacity-20 transition-colors duration-300`}>
                                         <StatIcon className={`w-8 h-8 ${stat.color}`} />
                                     </div>
                                     <div className="text-3xl lg:text-4xl font-bold text-gray-900 mb-2">{stat.value}</div>
@@ -171,9 +171,9 @@ export default function ProductsPage() {
             </section>
 
             {/* Products Grid */}
-            <section className="py-32 bg-gray-50">
+            <section className="py-32 bg-gray-50 animate-fade-in">
                 <div className="container mx-auto px-6">
-                    <div className="text-center mb-16">
+                    <div className="text-center mb-16 animate-slide-up">
                         <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-6">
                             Our{' '}
                             <span className="relative">
@@ -181,7 +181,7 @@ export default function ProductsPage() {
                                 <div className="absolute bottom-2 left-0 w-full h-2 bg-green-500 -z-10 transform -skew-x-12"></div>
                             </span>
                         </h2>
-                        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                        <p className="text-xl text-gray-600 max-w-3xl mx-auto animate-slide-up" style={{ animationDelay: '0.2s' }}>
                             Comprehensive solutions designed to transform your sales and marketing efforts into a lead-generating powerhouse.
                         </p>
                     </div>
@@ -192,8 +192,9 @@ export default function ProductsPage() {
                             return (
                                 <div
                                     key={product.id}
-                                    className={`bg-white rounded-xl shadow-lg border-2 hover:shadow-xl transition-all duration-500 hover:scale-105 cursor-pointer overflow-hidden ${activeProduct === index ? 'border-green-500 shadow-xl' : 'border-gray-200'
+                                    className={`bg-white rounded-xl shadow-lg border-2 hover:shadow-xl transition-all duration-500 hover:scale-105 cursor-pointer overflow-hidden animate-slide-up ${activeProduct === index ? 'border-green-500 shadow-xl' : 'border-gray-200'
                                         }`}
+                                    style={{ animationDelay: `${index * 0.3}s` }}
                                     onClick={() => setActiveProduct(index)}
                                 >
                                     {product.popular && (
