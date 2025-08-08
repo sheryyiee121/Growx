@@ -289,7 +289,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 max-w-7xl mx-auto items-stretch">
+          <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 max-w-7xl mx-auto">
             {/* Contact Form */}
             <div className="flex-1 animate-slide-up">
               <ContactForm
@@ -298,67 +298,67 @@ export default function Home() {
                 submitButtonText="Get Free Consultation"
                 successTitle="We&apos;re excited to work with you!"
                 successMessage="We&apos;ve received your information and will contact you within 24 hours to discuss your lead generation needs."
-                className="bg-gray-50 h-full"
+                className="bg-gray-50"
               />
             </div>
 
             {/* Contact Info */}
             <div className="flex-1 lg:pl-8 animate-slide-up" style={{ animationDelay: '0.2s' }}>
-              <div className="bg-white p-6 sm:p-8 rounded-xl shadow-lg border border-gray-200 h-full flex flex-col justify-between">
+              <div className="bg-white p-6 sm:p-8 rounded-xl shadow-lg border border-gray-200">
                 <div className="space-y-6 sm:space-y-8">
                   <div>
                     <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">Contact Information</h3>
                     <div className="space-y-4 sm:space-y-6">
-                      <div className="flex items-start sm:items-center">
-                        <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-green-500 mr-3 sm:mr-4 mt-0.5 sm:mt-0 flex-shrink-0" />
+                      <div className="flex items-start gap-3 sm:gap-4">
+                        <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-green-500 mt-0.5 sm:mt-0 flex-shrink-0" />
                         <div className="min-w-0 flex-1">
-                          <p className="font-semibold text-gray-900 text-sm sm:text-base">Phone</p>
-                          <p className="text-gray-600 text-sm sm:text-base break-words">+91 (555) 123-4567</p>
+                          <p className="font-semibold text-gray-900 text-sm sm:text-base mb-1">Phone</p>
+                          <p className="text-gray-600 text-sm sm:text-base break-words leading-relaxed">+91 (555) 123-4567</p>
                         </div>
                       </div>
-                      <div className="flex items-start sm:items-center">
-                        <Mail className="w-5 h-5 sm:w-6 sm:h-6 text-green-500 mr-3 sm:mr-4 mt-0.5 sm:mt-0 flex-shrink-0" />
+                      <div className="flex items-start gap-3 sm:gap-4">
+                        <Mail className="w-5 h-5 sm:w-6 sm:h-6 text-green-500 mt-0.5 sm:mt-0 flex-shrink-0" />
                         <div className="min-w-0 flex-1">
-                          <p className="font-semibold text-gray-900 text-sm sm:text-base">Email</p>
-                          <p className="text-gray-600 text-sm sm:text-base break-words">www.growxmarketingservices@gmail.com</p>
+                          <p className="font-semibold text-gray-900 text-sm sm:text-base mb-1">Email</p>
+                          <p className="text-gray-600 text-sm sm:text-base break-words leading-relaxed">www.growxmarketingservices@gmail.com</p>
                         </div>
                       </div>
-                      <div className="flex items-start sm:items-center">
-                        <MapPin className="w-5 h-5 sm:w-6 sm:h-6 text-green-500 mr-3 sm:mr-4 mt-0.5 sm:mt-0 flex-shrink-0" />
+                      <div className="flex items-start gap-3 sm:gap-4">
+                        <MapPin className="w-5 h-5 sm:w-6 sm:h-6 text-green-500 mt-0.5 sm:mt-0 flex-shrink-0" />
                         <div className="min-w-0 flex-1">
-                          <p className="font-semibold text-gray-900 text-sm sm:text-base">Address</p>
-                          <p className="text-gray-600 text-sm sm:text-base break-words">Bhavya Corporate Tower, Vibhuti Khand, Lucknow, Uttar Pradesh, Gomti Nagar, Vibhuti Khand-226010</p>
+                          <p className="font-semibold text-gray-900 text-sm sm:text-base mb-1">Address</p>
+                          <p className="text-gray-600 text-sm sm:text-base break-words leading-relaxed">Bhavya Corporate Tower, Vibhuti Khand, Lucknow, Uttar Pradesh, Gomti Nagar, Vibhuti Khand-226010</p>
                         </div>
                       </div>
-                      <div className="flex items-start sm:items-center">
-                        <Clock className="w-5 h-5 sm:w-6 sm:h-6 text-green-500 mr-3 sm:mr-4 mt-0.5 sm:mt-0 flex-shrink-0" />
+                      <div className="flex items-start gap-3 sm:gap-4">
+                        <Clock className="w-5 h-5 sm:w-6 sm:h-6 text-green-500 mt-0.5 sm:mt-0 flex-shrink-0" />
                         <div className="min-w-0 flex-1">
-                          <p className="font-semibold text-gray-900 text-sm sm:text-base">Business Hours</p>
-                          <p className="text-gray-600 text-sm sm:text-base break-words">8:30am Est to 7:30pm Est</p>
+                          <p className="font-semibold text-gray-900 text-sm sm:text-base mb-1">Business Hours</p>
+                          <p className="text-gray-600 text-sm sm:text-base break-words leading-relaxed">8:30am Est to 7:30pm Est</p>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
 
-                <div className="bg-green-50 p-6 rounded-lg mt-8">
-                  <h4 className="text-lg font-bold text-gray-900 mb-4">Why Choose GrowX?</h4>
-                  <ul className="space-y-3 text-gray-600">
-                    <li className="flex items-center">
-                      <Check className="w-4 h-4 text-green-500 mr-2" />
-                      Proven track record with 500+ clients
+                <div className="bg-green-50 p-4 sm:p-6 rounded-lg mt-6 sm:mt-8">
+                  <h4 className="text-base sm:text-lg font-bold text-gray-900 mb-3 sm:mb-4">Why Choose GrowX?</h4>
+                  <ul className="space-y-2 sm:space-y-3 text-gray-600 text-sm sm:text-base">
+                    <li className="flex items-start gap-2">
+                      <Check className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                      <span className="leading-relaxed">Proven track record with 500+ clients</span>
                     </li>
-                    <li className="flex items-center">
-                      <Check className="w-4 h-4 text-green-500 mr-2" />
-                      Average 300% ROI for our clients
+                    <li className="flex items-start gap-2">
+                      <Check className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                      <span className="leading-relaxed">Average 300% ROI for our clients</span>
                     </li>
-                    <li className="flex items-center">
-                      <Check className="w-4 h-4 text-green-500 mr-2" />
-                      Dedicated account managers
+                    <li className="flex items-start gap-2">
+                      <Check className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                      <span className="leading-relaxed">Dedicated account managers</span>
                     </li>
-                    <li className="flex items-center">
-                      <Check className="w-4 h-4 text-green-500 mr-2" />
-                      Money-back guarantee
+                    <li className="flex items-start gap-2">
+                      <Check className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                      <span className="leading-relaxed">Money-back guarantee</span>
                     </li>
                   </ul>
                 </div>
