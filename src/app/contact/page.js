@@ -59,32 +59,32 @@ export default function ContactPage() {
             <Navbar />
 
             {/* Hero Section */}
-            <section className="pt-28 pb-16 bg-gradient-to-br from-green-50/30 via-white to-green-100/40">
-                <div className="container mx-auto px-6">
+            <section className="pt-20 sm:pt-24 lg:pt-28 pb-12 sm:pb-16 bg-gradient-to-br from-green-50/30 via-white to-green-100/40">
+                <div className="container mx-auto px-4 sm:px-6">
                     <div className="text-center max-w-4xl mx-auto">
-                        <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
+                        <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight mb-4 sm:mb-6">
                             Get In{' '}
                             <span className="relative">
                                 Touch
-                                <div className="absolute bottom-2 left-0 w-full h-2 bg-green-500 -z-10 transform -skew-x-12"></div>
+                                <div className="absolute bottom-1 sm:bottom-2 left-0 w-full h-1 sm:h-2 bg-green-500 -z-10 transform -skew-x-12"></div>
                             </span>
                             <br />
                             With Our Team
                         </h1>
-                        <p className="text-xl text-gray-600 leading-relaxed mb-8">
+                        <p className="text-base sm:text-lg lg:text-xl text-gray-600 leading-relaxed mb-6 sm:mb-8">
                             Ready to transform your business with our lead generation services? Let&apos;s discuss how we can help you achieve your sales goals.
                         </p>
-                        <div className="flex justify-center space-x-4">
-                            <button className="bg-green-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-500 hover:bg-green-800 hover:scale-105 hover:shadow-lg active:scale-95 transform flex items-center gap-2">
+                        <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
+                            <button className="bg-green-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg transition-all duration-500 hover:bg-green-800 hover:scale-105 hover:shadow-lg active:scale-95 transform flex items-center justify-center gap-2">
                                 Schedule Call
                                 <img
                                     src="/images/phone.png"
                                     alt="Phone"
-                                    className="w-5 h-5 object-contain filter brightness-0 invert"
+                                    className="w-4 h-4 sm:w-5 sm:h-5 object-contain filter brightness-0 invert"
                                     onError={(e) => e.target.style.display = 'none'}
                                 />
                             </button>
-                            <button className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-500 hover:border-green-700 hover:text-green-700 hover:scale-105 active:scale-95 transform">
+                            <button className="border-2 border-gray-300 text-gray-700 px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg transition-all duration-500 hover:border-green-700 hover:text-green-700 hover:scale-105 active:scale-95 transform">
                                 Send Message
                             </button>
                         </div>
@@ -93,24 +93,26 @@ export default function ContactPage() {
             </section>
 
             {/* Contact Info Cards */}
-            <section className="py-32 bg-white">
-                <div className="container mx-auto px-6">
-                    <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <section className="py-16 sm:py-24 lg:py-32 bg-white">
+                <div className="container mx-auto px-4 sm:px-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 lg:gap-16 max-w-6xl mx-auto">
                         {contactInfo.map((info, index) => (
-                            <div key={index} className="text-center animate-slide-up" style={{ animationDelay: `${index * 0.1}s` }}>
-                                <div className={`w-16 h-16 ${info.color} rounded-full flex items-center justify-center mx-auto mb-4`}>
+                            <div key={index} className="text-center animate-slide-up p-8 sm:p-10 bg-white rounded-xl shadow-lg border border-gray-100" style={{ animationDelay: `${index * 0.1}s` }}>
+                                <div className={`w-14 h-14 sm:w-18 sm:h-18 ${info.color} rounded-full flex items-center justify-center mx-auto mb-6 sm:mb-8`}>
                                     <img
                                         src={info.image}
                                         alt={info.title}
-                                        className="w-8 h-8 object-contain filter brightness-0 invert"
+                                        className="w-7 h-7 sm:w-9 sm:h-9 object-contain filter brightness-0 invert"
                                         onError={(e) => {
                                             e.target.style.display = 'none';
                                         }}
                                     />
                                 </div>
-                                <h3 className="text-xl font-bold text-gray-900 mb-2">{info.title}</h3>
-                                <p className="text-lg font-medium text-gray-800 mb-1">{info.detail}</p>
-                                <p className="text-sm text-gray-600">{info.description}</p>
+                                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">{info.title}</h3>
+                                <div className="space-y-3 sm:space-y-4">
+                                    <p className="text-base sm:text-lg font-medium text-gray-800 leading-relaxed break-words">{info.detail}</p>
+                                    <p className="text-sm sm:text-base text-gray-600 leading-relaxed">{info.description}</p>
+                                </div>
                             </div>
                         ))}
                     </div>
@@ -118,9 +120,9 @@ export default function ContactPage() {
             </section>
 
             {/* Contact Form & Features */}
-            <section className="py-32 bg-gray-50">
-                <div className="container mx-auto px-6">
-                    <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+            <section className="py-16 sm:py-24 lg:py-32 bg-gray-50">
+                <div className="container mx-auto px-4 sm:px-6">
+                    <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 max-w-6xl mx-auto">
                         {/* Contact Form */}
                         <ContactForm
                             title="Send us a message"
@@ -131,63 +133,63 @@ export default function ContactPage() {
                         />
 
                         {/* Features & Contact Info */}
-                        <div className="space-y-8">
+                        <div className="space-y-6 sm:space-y-8">
                             <div>
-                                <h3 className="text-2xl font-bold text-gray-900 mb-6">Why Choose Us?</h3>
-                                <div className="space-y-6">
+                                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">Why Choose Us?</h3>
+                                <div className="space-y-4 sm:space-y-6">
                                     {features.map((feature, index) => (
-                                        <div key={index} className="flex items-start space-x-4">
-                                            <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                        <div key={index} className="flex items-start gap-3 sm:gap-4">
+                                            <div className="w-10 h-10 sm:w-12 sm:h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
                                                 <img
                                                     src={feature.image}
                                                     alt={feature.title}
-                                                    className="w-6 h-6 object-contain"
+                                                    className="w-5 h-5 sm:w-6 sm:h-6 object-contain"
                                                     onError={(e) => {
                                                         e.target.style.display = 'none';
                                                     }}
                                                 />
                                             </div>
-                                            <div>
-                                                <h4 className="text-lg font-semibold text-gray-900 mb-2">{feature.title}</h4>
-                                                <p className="text-gray-600">{feature.description}</p>
+                                            <div className="min-w-0 flex-1">
+                                                <h4 className="text-base sm:text-lg font-semibold text-gray-900 mb-1 sm:mb-2 leading-relaxed">{feature.title}</h4>
+                                                <p className="text-sm sm:text-base text-gray-600 leading-relaxed">{feature.description}</p>
                                             </div>
                                         </div>
                                     ))}
                                 </div>
                             </div>
 
-                            <div className="bg-green-50 p-6 rounded-xl">
-                                <h3 className="text-xl font-bold text-gray-900 mb-4">Need Immediate Help?</h3>
-                                <p className="text-gray-600 mb-6">
+                            <div className="bg-green-50 p-4 sm:p-6 rounded-xl">
+                                <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 sm:mb-4">Need Immediate Help?</h3>
+                                <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6 leading-relaxed">
                                     For urgent inquiries or immediate assistance, feel free to call us directly.
                                 </p>
-                                <div className="space-y-3">
-                                    <div className="flex items-center space-x-3">
+                                <div className="space-y-3 sm:space-y-4">
+                                    <div className="flex items-start gap-3">
                                         <img
                                             src="/images/phone.png"
                                             alt="Phone"
-                                            className="w-5 h-5 object-contain"
+                                            className="w-4 h-4 sm:w-5 sm:h-5 object-contain mt-0.5 flex-shrink-0"
                                             onError={(e) => e.target.style.display = 'none'}
                                         />
-                                        <span className="font-medium text-gray-900">+918961142973</span>
+                                        <span className="font-medium text-gray-900 text-sm sm:text-base break-words leading-relaxed">+918961142973</span>
                                     </div>
-                                    <div className="flex items-center space-x-3">
+                                    <div className="flex items-start gap-3">
                                         <img
                                             src="/images/email.gif"
                                             alt="Email"
-                                            className="w-5 h-5 object-contain"
+                                            className="w-4 h-4 sm:w-5 sm:h-5 object-contain mt-0.5 flex-shrink-0"
                                             onError={(e) => e.target.style.display = 'none'}
                                         />
-                                        <span className="font-medium text-gray-900">www.growxmarketingservices@gmail.com</span>
+                                        <span className="font-medium text-gray-900 text-sm sm:text-base break-words leading-relaxed">www.growxmarketingservices@gmail.com</span>
                                     </div>
-                                    <div className="flex items-center space-x-3">
+                                    <div className="flex items-start gap-3">
                                         <img
                                             src="/images/visitus.png"
                                             alt="Visit Us"
-                                            className="w-5 h-5 object-contain"
+                                            className="w-4 h-4 sm:w-5 sm:h-5 object-contain mt-0.5 flex-shrink-0"
                                             onError={(e) => e.target.style.display = 'none'}
                                         />
-                                        <span className="font-medium text-gray-900">Mon-Fri, 8am-6pm PST</span>
+                                        <span className="font-medium text-gray-900 text-sm sm:text-base break-words leading-relaxed">Mon-Fri, 8am-6pm PST</span>
                                     </div>
                                 </div>
                             </div>
