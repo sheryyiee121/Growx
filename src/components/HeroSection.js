@@ -7,7 +7,7 @@ import { ArrowRight, TrendingUp, Users, Phone } from 'lucide-react';
 export default function HeroSection() {
     return (
         <section
-            className="min-h-screen bg-gradient-to-br from-green-50/30 via-white to-green-100/40 flex items-center justify-center relative overflow-hidden pt-32 md:pt-20"          
+            className="min-h-screen bg-gradient-to-br from-green-50/30 via-white to-green-100/40 flex items-center justify-center relative overflow-hidden pt-32 md:pt-20"
             aria-labelledby="hero-heading"
         >
             <div className="w-full max-w-7xl mx-auto px-6">
@@ -41,18 +41,18 @@ export default function HeroSection() {
                         </div>
 
                         {/* Social Proof */}
-                        <div className="flex items-center gap-8 pt-6 justify-center flex-wrap">
-                            <div className="flex items-center gap-2 text-sm text-gray-700 bg-gradient-to-r from-blue-50 to-purple-50 px-4 py-2 rounded-full border border-blue-200 hover:animate-wobble">
-                                <Users className="w-5 h-5 text-blue-500 animate-pulse" aria-hidden="true" />
-                                <span className="font-semibold">500+ Clients</span>
+                        <div className="flex flex-wrap items-center gap-3 sm:gap-6 lg:gap-8 pt-6 justify-center">
+                            <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-700 bg-gradient-to-r from-blue-50 to-purple-50 px-3 sm:px-4 py-2 rounded-full border border-blue-200 hover:animate-wobble">
+                                <Users className="w-4 h-4 sm:w-5 sm:h-5 text-blue-500 animate-pulse" aria-hidden="true" />
+                                <span className="font-semibold whitespace-nowrap">500+ Clients</span>
                             </div>
-                            <div className="flex items-center gap-2 text-sm text-gray-700 bg-gradient-to-r from-green-50 to-teal-50 px-4 py-2 rounded-full border border-green-200 hover:animate-wobble">
-                                <TrendingUp className="w-5 h-5 text-green-500 animate-bounce" aria-hidden="true" />
-                                <span className="font-semibold">95% Success Rate</span>
+                            <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-700 bg-gradient-to-r from-green-50 to-teal-50 px-3 sm:px-4 py-2 rounded-full border border-green-200 hover:animate-wobble">
+                                <TrendingUp className="w-4 h-4 sm:w-5 sm:h-5 text-green-500 animate-bounce" aria-hidden="true" />
+                                <span className="font-semibold whitespace-nowrap">95% Success Rate</span>
                             </div>
-                            <div className="flex items-center gap-2 text-sm text-gray-700 bg-gradient-to-r from-orange-50 to-red-50 px-4 py-2 rounded-full border border-orange-200 hover:animate-wobble">
-                                <Phone className="w-5 h-5 text-orange-500 animate-pulse" aria-hidden="true" />
-                                <span className="font-semibold">24/7 Support</span>
+                            <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-700 bg-gradient-to-r from-orange-50 to-red-50 px-3 sm:px-4 py-2 rounded-full border border-orange-200 hover:animate-wobble">
+                                <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-orange-500 animate-pulse" aria-hidden="true" />
+                                <span className="font-semibold whitespace-nowrap">24/7 Support</span>
                             </div>
                         </div>
                     </div>

@@ -62,6 +62,37 @@ export default function ContactForm({
                 [name]: ''
             }));
         }
+
+        // Real-time validation for email and phone
+        if (name === 'email' && value.trim()) {
+            const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if (!emailRegex.test(value)) {
+                setErrors(prev => ({
+                    ...prev,
+                    email: 'Please enter a valid email address'
+                }));
+            } else {
+                setErrors(prev => ({
+                    ...prev,
+                    email: ''
+                }));
+            }
+        }
+
+        if (name === 'phone' && value.trim()) {
+            const cleanPhone = value.replace(/[\s\-\(\)\.]/g, '');
+            if (!/^[\+]?[1-9][\d]{6,14}$/.test(cleanPhone)) {
+                setErrors(prev => ({
+                    ...prev,
+                    phone: 'Please enter a valid phone number (7-15 digits)'
+                }));
+            } else {
+                setErrors(prev => ({
+                    ...prev,
+                    phone: ''
+                }));
+            }
+        }
     };
 
     const validateForm = () => {
@@ -77,8 +108,23 @@ export default function ContactForm({
 
         if (!formData.email.trim()) {
             newErrors.email = 'Email is required';
-        } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-            newErrors.email = 'Email is invalid';
+        } else {
+            // More comprehensive email validation
+            const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if (!emailRegex.test(formData.email)) {
+                newErrors.email = 'Please enter a valid email address';
+            }
+        }
+
+        if (!formData.phone.trim()) {
+            newErrors.phone = 'Phone number is required';
+        } else {
+            // Remove all non-digit characters except + for validation
+            const cleanPhone = formData.phone.replace(/[\s\-\(\)\.]/g, '');
+            // Check if it's a valid phone number (7-15 digits, optionally starting with +)
+            if (!/^[\+]?[1-9][\d]{6,14}$/.test(cleanPhone)) {
+                newErrors.phone = 'Please enter a valid phone number (7-15 digits)';
+            }
         }
 
         if (!formData.message.trim()) {
@@ -153,11 +199,12 @@ export default function ContactForm({
             <div className="mb-8">
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">{title}</h3>
                 <p className="text-gray-600">{description}</p>
+                <p className="text-sm text-gray-500 mt-2">* Required fields</p>
             </div>
 
-            <form onSubmit={handleSubmit} className="space-y-8">
+            <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Name Fields */}
-                <div className="grid md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                     <div>
                         <label className="block text-sm font-medium text-gray-700 mb-2">
                             First Name *
@@ -167,7 +214,8 @@ export default function ContactForm({
                             name="firstName"
                             value={formData.firstName}
                             onChange={handleChange}
-                            className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent transition-all duration-300 ${errors.firstName ? 'border-red-500' : 'border-gray-300'
+                            required
+                            className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent transition-all duration-300 text-gray-900 placeholder-gray-600 ${errors.firstName ? 'border-red-500' : 'border-gray-300'
                                 }`}
                             placeholder="John"
                         />
@@ -184,7 +232,8 @@ export default function ContactForm({
                             name="lastName"
                             value={formData.lastName}
                             onChange={handleChange}
-                            className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent transition-all duration-300 ${errors.lastName ? 'border-red-500' : 'border-gray-300'
+                            required
+                            className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent transition-all duration-300 text-gray-900 placeholder-gray-600 ${errors.lastName ? 'border-red-500' : 'border-gray-300'
                                 }`}
                             placeholder="Doe"
                         />
@@ -204,7 +253,8 @@ export default function ContactForm({
                         name="email"
                         value={formData.email}
                         onChange={handleChange}
-                        className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent transition-all duration-300 ${errors.email ? 'border-red-500' : 'border-gray-300'
+                        required
+                        className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent transition-all duration-300 text-gray-900 placeholder-gray-600 ${errors.email ? 'border-red-500' : 'border-gray-300'
                             }`}
                         placeholder="john@company.com"
                     />
@@ -214,19 +264,23 @@ export default function ContactForm({
                 </div>
 
                 {/* Phone & Company */}
-                <div className="grid md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                     <div>
                         <label className="block text-sm font-medium text-gray-700 mb-2">
-                            Phone Number
+                            Phone Number *
                         </label>
                         <input
                             type="tel"
                             name="phone"
                             value={formData.phone}
                             onChange={handleChange}
-                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent transition-all duration-300"
+                            required
+                            className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent transition-all duration-300 text-gray-900 placeholder-gray-600 ${errors.phone ? 'border-red-500' : 'border-gray-300'}`}
                             placeholder="+1 (555) 123-4567"
                         />
+                        {errors.phone && (
+                            <p className="text-red-500 text-sm mt-1">{errors.phone}</p>
+                        )}
                     </div>
                     <div>
                         <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -237,7 +291,7 @@ export default function ContactForm({
                             name="company"
                             value={formData.company}
                             onChange={handleChange}
-                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent transition-all duration-300"
+                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent transition-all duration-300 text-gray-900 placeholder-gray-600"
                             placeholder="Your Company"
                         />
                     </div>
@@ -253,11 +307,11 @@ export default function ContactForm({
                             name="service"
                             value={formData.service}
                             onChange={handleChange}
-                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent transition-all duration-300"
+                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent transition-all duration-300 text-gray-900 bg-white"
                         >
-                            <option value="">Select a service</option>
+                            <option value="" className="text-gray-500">Select a service</option>
                             {services.map((service, index) => (
-                                <option key={index} value={service}>{service}</option>
+                                <option key={index} value={service} className="text-gray-900">{service}</option>
                             ))}
                         </select>
                     </div>
@@ -272,8 +326,9 @@ export default function ContactForm({
                         name="message"
                         value={formData.message}
                         onChange={handleChange}
+                        required
                         rows={5}
-                        className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent transition-all duration-300 resize-none ${errors.message ? 'border-red-500' : 'border-gray-300'
+                        className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent transition-all duration-300 resize-none text-gray-900 placeholder-gray-600 ${errors.message ? 'border-red-500' : 'border-gray-300'
                             }`}
                         placeholder="Tell us about your project and how we can help..."
                     />
