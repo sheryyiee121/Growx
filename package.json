@@ -1,0 +1,71 @@
+{
+  "name": "growx-lead-generation",
+  "version": "1.0.0",
+  "description": "Professional lead generation website for GrowX Marketing Services - Modern, responsive, and SEO-optimized",
+  "private": true,
+  "author": {
+    "name": "GrowX Marketing Services",
+    "email": "support@growx-marketing.com",
+    "url": "https://growx-marketing.com"
+  },
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/growx-marketing/growx-website"
+  },
+  "keywords": [
+    "lead-generation",
+    "marketing",
+    "B2B",
+    "sales",
+    "nextjs",
+    "react",
+    "tailwindcss",
+    "seo",
+    "responsive",
+    "professional"
+  ],
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "lint:fix": "next lint --fix",
+    "type-check": "tsc --noEmit",
+    "analyze": "ANALYZE=true next build",
+    "export": "next build && next export",
+    "clean": "rm -rf .next out",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "dependencies": {
+    "lucide-react": "^0.536.0",
+    "next": "15.4.5",
+    "react": "19.1.0",
+    "react-dom": "19.1.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
+    "eslint": "^9",
+    "eslint-config-next": "15.4.5",
+    "tailwindcss": "^4",
+    "prettier": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
