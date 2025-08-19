@@ -227,7 +227,7 @@ export default function ContactPage() {
                                             height={20}
                                             className="w-4 h-4 sm:w-5 sm:h-5 object-contain mt-0.5 flex-shrink-0"
                                         />
-                                        <span className="font-medium text-gray-900 text-sm sm:text-base break-words leading-relaxed">Mon-Fri, 8am-6pm PST</span>
+                                        <span className="font-medium text-gray-900 text-sm sm:text-base break-words leading-relaxed">Mon-Fri, 8am-6pm EST</span>
                                     </div>
                                 </div>
                             </div>
