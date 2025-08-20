@@ -8,13 +8,13 @@ import Image from 'next/image';
 export default function HeroSection() {
     return (
         <section
-            className="min-h-screen bg-gradient-to-br from-green-50/30 via-white to-green-100/40 flex items-center justify-center relative overflow-hidden pt-32 md:pt-20"
+            className="min-h-[calc(100vh-2rem)] lg:min-h-screen bg-gradient-to-br from-green-50/30 via-white to-green-100/40 flex items-center justify-center relative overflow-hidden pt-20 pb-8 sm:pt-24 lg:pt-20"
             aria-labelledby="hero-heading"
         >
             <div className="w-full max-w-7xl mx-auto px-6">
-                <div className="grid lg:grid-cols-2 gap-12 items-center">
+                <div className="grid lg:grid-cols-2 gap-6 lg:gap-12 items-center">
                     {/* Left Content */}
-                    <div className="text-center lg:text-left space-y-8">
+                    <div className="text-center lg:text-left space-y-4 sm:space-y-6 lg:space-y-8">
                         <h1
                             id="hero-heading"
                             className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight"
@@ -40,7 +40,7 @@ export default function HeroSection() {
                         </div>
 
                         {/* Social Proof */}
-                        <div className="flex flex-wrap items-center gap-3 sm:gap-6 lg:gap-8 pt-6 justify-center lg:justify-start">
+                        <div className="flex flex-wrap items-center gap-3 sm:gap-6 lg:gap-8 pt-2 sm:pt-4 lg:pt-6 justify-center lg:justify-start">
                             <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-700 bg-gradient-to-r from-blue-50 to-purple-50 px-3 sm:px-4 py-2 rounded-full border border-blue-200 hover:animate-wobble">
                                 <Users className="w-4 h-4 sm:w-5 sm:h-5 text-blue-500 animate-pulse" aria-hidden="true" />
                                 <span className="font-semibold whitespace-nowrap">500+ Clients</span>

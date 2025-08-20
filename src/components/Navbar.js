@@ -161,11 +161,11 @@ export default function Navbar() {
                 {/* Mobile Menu */}
                 <div
                     id="mobile-menu"
-                    className={`lg:hidden transition-all duration-300 ease-in-out overflow-hidden ${isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                    className={`lg:hidden transition-all duration-300 ease-in-out overflow-hidden ${isMenuOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
                         }`}
                     aria-hidden={!isMenuOpen}
                 >
-                    <div className="py-4 space-y-2 bg-white border-t border-gray-100">
+                    <div className="py-4 space-y-2 bg-white border-t border-gray-100 pb-6">
                         {navigationItems.map((item) => (
                             <button
                                 key={item.id}
@@ -178,7 +178,7 @@ export default function Navbar() {
                         ))}
 
                         {/* Get Started Button - Mobile */}
-                        <div className="px-4 py-3">
+                        <div className="px-4 py-4">
                             <button className="w-full bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-full font-semibold text-sm transition-all duration-300">
                                 Get Started
                             </button>
