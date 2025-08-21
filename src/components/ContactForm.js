@@ -158,8 +158,9 @@ export default function ContactForm({
             if (onSubmit) {
                 await onSubmit(formData);
             } else {
-                // Submit to Google Sheets
-                const googleSheetsUrl = 'https://script.google.com/macros/s/AKfycbzGrowXFormSubmission/exec';
+                // Submit to Google Sheets - Replace this URL with your deployed script URL
+                // const googleSheetsUrl = 'https://script.google.com/macros/s/YOUR_DEPLOYED_SCRIPT_ID/exec';
+                const googleSheetsUrl = 'PASTE_YOUR_DEPLOYED_SCRIPT_URL_HERE';
 
                 const formDataToSubmit = new FormData();
                 formDataToSubmit.append('firstName', formData.firstName);

@@ -36,7 +36,7 @@ export default function FloatingWhatsApp() {
                         </div>
                         <p className="text-gray-600 text-sm mb-3">
                             Hi there! 👋<br />
-                            Ready to get high-quality leads for your business? Let's chat!
+                            Ready to get high-quality leads for your business? Let&apos;s chat!
                         </p>
                         <button
                             onClick={handleWhatsAppClick}
