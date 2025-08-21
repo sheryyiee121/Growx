@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Navbar from '../../components/Navbar';
 import UpArrow from '../../components/UpArrow';
+import ServicesForm from '../../components/ServicesForm';
 import Image from 'next/image';
 import {
     CheckCircle,
@@ -318,46 +319,15 @@ export default function ServicesPage() {
                             </div>
 
                             {/* Contact Form */}
-                            <div className="bg-white p-8 rounded-xl shadow-lg">
-                                <h3 className="text-2xl font-bold text-gray-900 mb-6">Get Expert Guidance</h3>
-                                <form className="space-y-6">
-                                    <div className="grid md:grid-cols-2 gap-4">
-                                        <div>
-                                            <label className="block text-sm font-medium text-gray-700 mb-2">First Name</label>
-                                            <input type="text" className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent" />
-                                        </div>
-                                        <div>
-                                            <label className="block text-sm font-medium text-gray-700 mb-2">Last Name</label>
-                                            <input type="text" className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent" />
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <label className="block text-sm font-medium text-gray-700 mb-2">Email</label>
-                                        <input type="email" className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent" />
-                                    </div>
-                                    <div>
-                                        <label className="block text-sm font-medium text-gray-700 mb-2">Phone</label>
-                                        <input type="tel" className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent" />
-                                    </div>
-                                    <div>
-                                        <label className="block text-sm font-medium text-gray-700 mb-2">Service Interest</label>
-                                        <select className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent text-black">
-                                            <option className="text-black">Select a service</option>
-                                            {services.map((service) => (
-                                                <option key={service.id} className="text-black">{service.title}</option>
-                                            ))}
-                                            <option className="text-black">Custom Solutions</option>
-                                        </select>
-                                    </div>
-                                    <div>
-                                        <label className="block text-sm font-medium text-gray-700 mb-2">Message</label>
-                                        <textarea rows="4" className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent" placeholder="Tell us about your needs..."></textarea>
-                                    </div>
-                                    <button type="submit" className="w-full bg-green-500 text-white py-3 rounded-lg font-semibold transition-all duration-500 hover:bg-green-600 hover:scale-105">
-                                        Get Quality Leads
-                                    </button>
-                                </form>
-                            </div>
+                            <ServicesForm
+                                services={services}
+                                selectedService={services[activeService]?.title || ''}
+                                title="Get Expert Guidance"
+                                description="Fill out the form below and we'll get back to you within 24 hours."
+                                submitButtonText="Get Quality Leads"
+                                successTitle="Thank You for Your Interest!"
+                                successMessage="We've received your service inquiry and will contact you soon with available options."
+                            />
                         </div>
                     </div>
                 </div>

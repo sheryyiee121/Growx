@@ -443,10 +443,10 @@ export default function Home() {
               </p>
               <h5 className="text-1xl font-semibold mb-3">Visit our Socials</h5>
               <div className="flex flex-wrap gap-2">
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-600 transition-colors p-2 hover:bg-gray-800 rounded-full">
+                <a href="https://www.linkedin.com/in/rahul-yadav-0654101b2" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-600 transition-colors p-2 hover:bg-gray-800 rounded-full">
                   <Linkedin className="w-4 h-4" />
                 </a>
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-pink-500 transition-colors p-2 hover:bg-gray-800 rounded-full">
+                <a href="https://www.instagram.com/growxmarketingservices?igsh=MWo5aGRpbWJsZ2UxNA==" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-pink-500 transition-colors p-2 hover:bg-gray-800 rounded-full">
                   <Instagram className="w-4 h-4" />
                 </a>
               </div>
@@ -491,9 +491,9 @@ export default function Home() {
           </div>
 
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; 2025 GrowX Marketing Services. All rights reserved. |
-              <a href="/privacy-policy" className="hover:text-white transition-colors ml-1">Privacy Policy</a> |
-              <a href="/terms-of-service" className="hover:text-white transition-colors ml-1">Terms of Service</a>
+            <p>&copy; 2025 GrowX Marketing Services. All rights reserved.
+              {/* <a href="/privacy-policy" className="hover:text-white transition-colors ml-1">Privacy Policy</a> | */}
+              {/* <a href="/terms-of-service" className="hover:text-white transition-colors ml-1">Terms of Service</a> */}
             </p>
           </div>
         </div>

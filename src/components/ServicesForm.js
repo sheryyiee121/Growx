@@ -2,44 +2,20 @@
 
 import { useState } from 'react';
 import { Send, CheckCircle } from 'lucide-react';
+import { submitToGoogleSheets, validateFormFields, FORM_TYPES } from '../utils/formSubmission';
 
 /**
- * Reusable ContactForm Component
- * @param {Object} props
- * @param {string} props.title - Form title
- * @param {string} props.description - Form description
- * @param {Array} props.services - Array of available services for dropdown
- * @param {string} props.submitButtonText - Custom submit button text
- * @param {string} props.successTitle - Custom success title
- * @param {string} props.successMessage - Custom success message
- * @param {Function} props.onSubmit - Custom submit handler (optional)
- * @param {boolean} props.showServices - Whether to show services dropdown
- * @param {string} props.className - Additional CSS classes
+ * ServicesForm Component
+ * Specialized form for services page inquiries
  */
-export default function ContactForm({
-    title = "Send us a message",
-    description = "Fill out the form below and we&apos;ll get back to you within 24 hours.",
-    services = [
-        'ACA (Affordable Care Act)',
-        'Final Expense Insurance',
-        'Auto Insurance',
-        'SSDI (Social Security Disability Insurance)',
-        'Debt Settlement',
-        'Education Services',
-        'Lead Generation',
-        'Advertising',
-        'Outsourcing',
-        'Telecommunications',
-        'Cold Calling Services',
-        'Pay Per Call',
-        'Inbound & Outbound Call Services',
-        'Custom Solutions'
-    ],
-    submitButtonText = "Send Message",
+export default function ServicesForm({
+    services = [],
+    selectedService = '',
+    title = "Get Expert Guidance",
+    description = "Fill out the form below and we'll get back to you within 24 hours.",
+    submitButtonText = "Get Quality Leads",
     successTitle = "Thank You!",
-    successMessage = "We&apos;ve received your message and will get back to you within 24 hours.",
-    onSubmit = null,
-    showServices = true,
+    successMessage = "We've received your service inquiry and will contact you soon with available options.",
     className = ""
 }) {
     const [formData, setFormData] = useState({
@@ -47,9 +23,7 @@ export default function ContactForm({
         lastName: '',
         email: '',
         phone: '',
-        company: '',
-        service: '',
-        teamsId: '',
+        serviceInterest: selectedService,
         message: ''
     });
 
@@ -118,7 +92,6 @@ export default function ContactForm({
         if (!formData.email.trim()) {
             newErrors.email = 'Email is required';
         } else {
-            // More comprehensive email validation
             const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
             if (!emailRegex.test(formData.email)) {
                 newErrors.email = 'Please enter a valid email address';
@@ -128,9 +101,7 @@ export default function ContactForm({
         if (!formData.phone.trim()) {
             newErrors.phone = 'Phone number is required';
         } else {
-            // Remove all non-digit characters except + for validation
             const cleanPhone = formData.phone.replace(/[\s\-\(\)\.]/g, '');
-            // Check if it's a valid phone number (7-15 digits, optionally starting with +)
             if (!/^[\+]?[1-9][\d]{6,14}$/.test(cleanPhone)) {
                 newErrors.phone = 'Please enter a valid phone number (7-15 digits)';
             }
@@ -155,15 +126,8 @@ export default function ContactForm({
         setIsSubmitting(true);
 
         try {
-            if (onSubmit) {
-                await onSubmit(formData);
-            } else {
-                // Import the form submission utility
-                const { submitToGoogleSheets, FORM_TYPES } = await import('../utils/formSubmission');
-
-                // Submit to Google Sheets using utility function
-                await submitToGoogleSheets(formData, FORM_TYPES.CONTACT);
-            }
+            // Submit to Google Sheets
+            await submitToGoogleSheets(formData, FORM_TYPES.SERVICES);
 
             setIsSubmitted(true);
             setFormData({
@@ -171,9 +135,7 @@ export default function ContactForm({
                 lastName: '',
                 email: '',
                 phone: '',
-                company: '',
-                service: '',
-                teamsId: '',
+                serviceInterest: selectedService,
                 message: ''
             });
         } catch (error) {
@@ -202,7 +164,7 @@ export default function ContactForm({
                     onClick={resetForm}
                     className="bg-gray-900 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:bg-gray-800"
                 >
-                    Send Another Message
+                    Send Another Inquiry
                 </button>
             </div>
         );
@@ -218,10 +180,10 @@ export default function ContactForm({
 
             <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Name Fields */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+                <div className="grid md:grid-cols-2 gap-4">
                     <div>
                         <label className="block text-sm font-medium text-gray-700 mb-2">
-                            Full Name - First *
+                            First Name *
                         </label>
                         <input
                             type="text"
@@ -229,7 +191,7 @@ export default function ContactForm({
                             value={formData.firstName}
                             onChange={handleChange}
                             required
-                            className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent transition-all duration-300 text-gray-900 placeholder-gray-600 ${errors.firstName ? 'border-red-500' : 'border-gray-300'
+                            className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-300 text-gray-900 placeholder-gray-600 ${errors.firstName ? 'border-red-500' : 'border-gray-300'
                                 }`}
                             placeholder="John"
                         />
@@ -239,7 +201,7 @@ export default function ContactForm({
                     </div>
                     <div>
                         <label className="block text-sm font-medium text-gray-700 mb-2">
-                            Full Name - Last *
+                            Last Name *
                         </label>
                         <input
                             type="text"
@@ -247,7 +209,7 @@ export default function ContactForm({
                             value={formData.lastName}
                             onChange={handleChange}
                             required
-                            className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent transition-all duration-300 text-gray-900 placeholder-gray-600 ${errors.lastName ? 'border-red-500' : 'border-gray-300'
+                            className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-300 text-gray-900 placeholder-gray-600 ${errors.lastName ? 'border-red-500' : 'border-gray-300'
                                 }`}
                             placeholder="Doe"
                         />
@@ -268,7 +230,7 @@ export default function ContactForm({
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent transition-all duration-300 text-gray-900 placeholder-gray-600 ${errors.email ? 'border-red-500' : 'border-gray-300'
+                        className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-300 text-gray-900 placeholder-gray-600 ${errors.email ? 'border-red-500' : 'border-gray-300'
                             }`}
                         placeholder="john@company.com"
                     />
@@ -277,73 +239,45 @@ export default function ContactForm({
                     )}
                 </div>
 
-                {/* Phone & Company */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-                    <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
-                            Phone Number *
-                        </label>
-                        <input
-                            type="tel"
-                            name="phone"
-                            value={formData.phone}
-                            onChange={handleChange}
-                            required
-                            className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent transition-all duration-300 text-gray-900 placeholder-gray-600 ${errors.phone ? 'border-red-500' : 'border-gray-300'}`}
-                            placeholder="+1 (555) 123-4567"
-                        />
-                        {errors.phone && (
-                            <p className="text-red-500 text-sm mt-1">{errors.phone}</p>
-                        )}
-                    </div>
-                    <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
-                            Company Name
-                        </label>
-                        <input
-                            type="text"
-                            name="company"
-                            value={formData.company}
-                            onChange={handleChange}
-                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent transition-all duration-300 text-gray-900 placeholder-gray-600"
-                            placeholder="Your Company"
-                        />
-                    </div>
-                </div>
-
-                {/* Service Selection */}
-                {showServices && (
-                    <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
-                            What services can we help you with
-                        </label>
-                        <select
-                            name="service"
-                            value={formData.service}
-                            onChange={handleChange}
-                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent transition-all duration-300 text-gray-900 bg-white"
-                        >
-                            <option value="" className="text-gray-500">Select a service</option>
-                            {services.map((service, index) => (
-                                <option key={index} value={service} className="text-gray-900">{service}</option>
-                            ))}
-                        </select>
-                    </div>
-                )}
-
-                {/* Teams ID */}
+                {/* Phone */}
                 <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                        Teams ID
+                        Phone Number *
                     </label>
                     <input
-                        type="text"
-                        name="teamsId"
-                        value={formData.teamsId}
+                        type="tel"
+                        name="phone"
+                        value={formData.phone}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent transition-all duration-300 text-gray-900 placeholder-gray-600"
-                        placeholder="Your Microsoft Teams ID"
+                        required
+                        className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-300 text-gray-900 placeholder-gray-600 ${errors.phone ? 'border-red-500' : 'border-gray-300'
+                            }`}
+                        placeholder="+1 (555) 123-4567"
                     />
+                    {errors.phone && (
+                        <p className="text-red-500 text-sm mt-1">{errors.phone}</p>
+                    )}
+                </div>
+
+                {/* Service Interest */}
+                <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                        Service Interest
+                    </label>
+                    <select
+                        name="serviceInterest"
+                        value={formData.serviceInterest}
+                        onChange={handleChange}
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-300 text-gray-900 bg-white"
+                    >
+                        <option value="" className="text-gray-500">Select a service</option>
+                        {services.map((service, index) => (
+                            <option key={service.id || index} value={service.title || service} className="text-gray-900">
+                                {service.title || service}
+                            </option>
+                        ))}
+                        <option value="Custom Solutions" className="text-gray-900">Custom Solutions</option>
+                    </select>
                 </div>
 
                 {/* Message */}
@@ -356,10 +290,10 @@ export default function ContactForm({
                         value={formData.message}
                         onChange={handleChange}
                         required
-                        rows={5}
-                        className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent transition-all duration-300 resize-none text-gray-900 placeholder-gray-600 ${errors.message ? 'border-red-500' : 'border-gray-300'
+                        rows={4}
+                        className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-300 resize-none text-gray-900 placeholder-gray-600 ${errors.message ? 'border-red-500' : 'border-gray-300'
                             }`}
-                        placeholder="Tell us about your project and how we can help..."
+                        placeholder="Tell us about your needs..."
                     />
                     {errors.message && (
                         <p className="text-red-500 text-sm mt-1">{errors.message}</p>
@@ -370,7 +304,7 @@ export default function ContactForm({
                 <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-gray-900 hover:bg-gray-800 text-white px-6 py-4 rounded-lg font-semibold text-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                    className="w-full bg-green-500 hover:bg-green-600 text-white px-6 py-4 rounded-lg font-semibold text-lg transition-all duration-500 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 hover:scale-105"
                 >
                     {isSubmitting ? (
                         <>
