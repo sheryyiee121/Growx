@@ -228,9 +228,6 @@ export default function ProductsPage() {
                                     <p className="text-gray-600 text-sm leading-relaxed mb-6 flex-grow">
                                         High-quality, targeted leads to fuel your sales pipeline and accelerate business growth
                                     </p>
-                                    <button className="w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105 mt-auto">
-                                        Explore
-                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -246,9 +243,6 @@ export default function ProductsPage() {
                                     <p className="text-gray-600 text-sm leading-relaxed mb-6 flex-grow">
                                         Strategic multi-platform advertising campaigns that maximize reach and ROI
                                     </p>
-                                    <button className="w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105 mt-auto">
-                                        Explore
-                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -264,9 +258,6 @@ export default function ProductsPage() {
                                     <p className="text-gray-600 text-sm leading-relaxed mb-6 flex-grow">
                                         Professional outsourcing solutions to optimize operations and reduce costs
                                     </p>
-                                    <button className="w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105 mt-auto">
-                                        Explore
-                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -282,9 +273,6 @@ export default function ProductsPage() {
                                     <p className="text-gray-600 text-sm leading-relaxed mb-6 flex-grow">
                                         Advanced communication solutions for seamless business connectivity
                                     </p>
-                                    <button className="w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105 mt-auto">
-                                        Explore
-                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -355,9 +343,7 @@ export default function ProductsPage() {
                                             </ul>
                                         </div>
 
-                                        <button className={`w-full ${vertical.popular ? 'bg-green-500 hover:bg-green-600' : 'bg-gray-800 hover:bg-gray-700'} text-white py-3 rounded-lg font-semibold transition-all duration-500 hover:scale-105`}>
-                                            {vertical.popular ? 'Get Started' : 'Learn More'}
-                                        </button>
+
                                     </div>
                                 </div>
                             );
@@ -387,15 +373,7 @@ export default function ProductsPage() {
                                     </ul>
                                 </div>
 
-                                <div className="flex space-x-4">
-                                    <button className="bg-green-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-500 hover:bg-green-800 hover:scale-105">
-                                        Get Started
-                                    </button>
-                                    <button className="border-2 border-green-700 text-green-700 px-6 py-3 rounded-lg font-semibold transition-all duration-500 hover:bg-green-700 hover:text-white hover:scale-105">
-                                        Learn More
-                                    </button>
 
-                                </div>
                             </div>
 
                             <div className="bg-gray-100 rounded-xl p-8">

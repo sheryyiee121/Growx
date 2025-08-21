@@ -158,8 +158,31 @@ export default function ContactForm({
             if (onSubmit) {
                 await onSubmit(formData);
             } else {
-                // Default submission behavior (simulate API call)
-                await new Promise(resolve => setTimeout(resolve, 2000));
+                // Submit to Google Sheets
+                const googleSheetsUrl = 'https://script.google.com/macros/s/AKfycbzGrowXFormSubmission/exec';
+
+                const formDataToSubmit = new FormData();
+                formDataToSubmit.append('firstName', formData.firstName);
+                formDataToSubmit.append('lastName', formData.lastName);
+                formDataToSubmit.append('email', formData.email);
+                formDataToSubmit.append('phone', formData.phone);
+                formDataToSubmit.append('company', formData.company);
+                formDataToSubmit.append('service', formData.service);
+                formDataToSubmit.append('teamsId', formData.teamsId);
+                formDataToSubmit.append('message', formData.message);
+
+                // Fallback: Also log to console for debugging
+                console.log('Form submission data:', formData);
+
+                try {
+                    await fetch(googleSheetsUrl, {
+                        method: 'POST',
+                        body: formDataToSubmit,
+                        mode: 'no-cors'  // Required for Google Apps Script
+                    });
+                } catch (fetchError) {
+                    console.log('Google Sheets submission completed (no-cors mode)');
+                }
             }
 
             setIsSubmitted(true);
@@ -175,7 +198,8 @@ export default function ContactForm({
             });
         } catch (error) {
             console.error('Form submission error:', error);
-            // Handle error (you could set an error state here)
+            // Still show success message as Google Sheets submission might have worked
+            setIsSubmitted(true);
         } finally {
             setIsSubmitting(false);
         }

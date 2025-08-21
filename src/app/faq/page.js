@@ -40,7 +40,7 @@ export default function FAQPage() {
         },
         {
             question: "What are your business hours?",
-            answer: "We&apos;re available Monday through Friday from 8:30 AM EST to 7:30 PM EST. For urgent matters, you can reach us via email at www.growxmarketingservices@gmail.com, and we provide 24/7 support for existing clients."
+            answer: "We&apos;re available Monday through Friday from 8.30 AM to 07.30 PM EST. For urgent matters, you can reach us via email at www.growxmarketingservices@gmail.com, and we provide 24/7 support for existing clients."
         },
         {
             question: "How do I get started with your services?",
@@ -143,14 +143,14 @@ export default function FAQPage() {
                         </p>
                     </div>
 
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                    <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                         <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 text-center">
                             <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
                                 <Phone className="w-8 h-8 text-white" />
                             </div>
                             <h3 className="text-xl font-bold text-gray-900 mb-3">Call Us</h3>
                             <p className="text-gray-600 mb-2">+918961142973</p>
-                            <p className="text-sm text-gray-500">8:30am EST to 7:30pm EST</p>
+                            <p className="text-sm text-gray-500">8.30 AM to 07.30 PM EST</p>
                         </div>
 
                         <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 text-center">
@@ -162,14 +162,7 @@ export default function FAQPage() {
                             <p className="text-sm text-gray-500">24/7 support available</p>
                         </div>
 
-                        <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 text-center md:col-span-2 lg:col-span-1">
-                            <div className="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <MessageCircle className="w-8 h-8 text-white" />
-                            </div>
-                            <h3 className="text-xl font-bold text-gray-900 mb-3">Live Chat</h3>
-                            <p className="text-gray-600 mb-2">Chat with our support team</p>
-                            <p className="text-sm text-gray-500">Available during business hours</p>
-                        </div>
+
                     </div>
                 </div>
             </section >
@@ -201,7 +194,7 @@ export default function FAQPage() {
                             />
                             <h3 className="text-lg font-semibold text-gray-900 mb-2">Call Us</h3>
                             <p className="text-gray-600">+918961142973</p>
-                            <p className="text-sm text-gray-500">8:30am est to 7:30pm est</p>
+                            <p className="text-sm text-gray-500">8.30 AM to 07.30 PM EST</p>
                         </div>
                         <div className="text-center">
                             <Image

@@ -4,21 +4,12 @@ import Navbar from '../components/Navbar';
 import HeroSection from '../components/HeroSection';
 import ContactForm from '../components/ContactForm';
 import UpArrow from '../components/UpArrow';
-import { Check, Star, Phone, Users, TrendingUp, Target, Zap, Shield, Mail, MapPin, Clock, Heart, Car, CreditCard, FileText, ArrowRight, Facebook, Linkedin, Instagram } from 'lucide-react';
+import FloatingWhatsApp from '../components/FloatingWhatsApp';
+import { Check, Star, Phone, Users, TrendingUp, Target, Zap, Shield, Mail, MapPin, Clock, Heart, Car, CreditCard, FileText, ArrowRight, Linkedin, Instagram } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 
-// Custom X (formerly Twitter) icon component
-const XIcon = ({ className }) => (
-  <svg
-    className={className}
-    viewBox="0 0 24 24"
-    fill="currentColor"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-  </svg>
-);
+
 
 export default function Home() {
   const [openFAQ, setOpenFAQ] = useState(null);
@@ -349,7 +340,7 @@ export default function Home() {
                         <Clock className="w-5 h-5 sm:w-6 sm:h-6 text-green-500 mt-0.5 sm:mt-0 flex-shrink-0" />
                         <div className="min-w-0 flex-1">
                           <p className="font-semibold text-gray-900 text-sm sm:text-base mb-1">Business Hours</p>
-                          <p className="text-gray-600 text-sm sm:text-base break-words leading-relaxed">8:30am Est to 7:30pm Est</p>
+                          <p className="text-gray-600 text-sm sm:text-base break-words leading-relaxed">8.30 AM to 07.30 PM EST</p>
                         </div>
                       </div>
                     </div>
@@ -367,14 +358,7 @@ export default function Home() {
                       <Check className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
                       <span className="leading-relaxed">Average 300% ROI for our clients</span>
                     </li>
-                    <li className="flex items-start gap-2">
-                      <Check className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                      <span className="leading-relaxed">Dedicated account managers</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <Check className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                      <span className="leading-relaxed">Money-back guarantee</span>
-                    </li>
+
                   </ul>
                 </div>
               </div>
@@ -459,12 +443,6 @@ export default function Home() {
               </p>
               <h5 className="text-1xl font-semibold mb-3">Visit our Socials</h5>
               <div className="flex flex-wrap gap-2">
-                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-500 transition-colors p-2 hover:bg-gray-800 rounded-full">
-                  <Facebook className="w-4 h-4" />
-                </a>
-                <a href="https://x.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors p-2 hover:bg-gray-800 rounded-full">
-                  <XIcon className="w-4 h-4" />
-                </a>
                 <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-600 transition-colors p-2 hover:bg-gray-800 rounded-full">
                   <Linkedin className="w-4 h-4" />
                 </a>
@@ -483,6 +461,7 @@ export default function Home() {
                 <li><a href="/services" className="hover:text-white transition-colors">Auto Insurance</a></li>
                 <li><a href="/services" className="hover:text-white transition-colors">Social Security Disability</a></li>
                 <li><a href="/services" className="hover:text-white transition-colors">Debt Settlement</a></li>
+                <li><a href="/services" className="hover:text-white transition-colors">Education</a></li>
               </ul>
             </div>
 
@@ -502,7 +481,7 @@ export default function Home() {
 
               <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4">Company</h4>
               <ul className="space-y-1 sm:space-y-2 text-gray-400 text-sm sm:text-base">
-                <li><a href="/about" className="hover:text-white transition-colors">About Us</a></li>
+                <li><a href="/aboutus" className="hover:text-white transition-colors">About Us</a></li>
 
 
                 <li><a href="/faq" className="hover:text-white transition-colors">FAQ&apos;s</a></li>
@@ -512,11 +491,15 @@ export default function Home() {
           </div>
 
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; 2025 GrowX Marketing Services. All rights reserved. | Privacy Policy | Terms of Service</p>
+            <p>&copy; 2025 GrowX Marketing Services. All rights reserved. |
+              <a href="/privacy-policy" className="hover:text-white transition-colors ml-1">Privacy Policy</a> |
+              <a href="/terms-of-service" className="hover:text-white transition-colors ml-1">Terms of Service</a>
+            </p>
           </div>
         </div>
       </footer >
       <UpArrow />
+      <FloatingWhatsApp />
     </div >
   );
 }
