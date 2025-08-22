@@ -463,8 +463,8 @@ export default function ServicesPage() {
                                 className="w-8 h-8 object-contain mx-auto mb-4"
                             />
                             <h3 className="text-lg font-semibold text-gray-900 mb-2">Call Us</h3>
-                            <p className="text-gray-600">+918961142973</p>
-                            <p className="text-sm text-gray-500">9:00am to 6:00pm IST</p>
+                            <p className="text-gray-600">+91 896 114 2973</p>
+                            <p className="text-sm text-gray-500">8.30 AM to 07.30 PM EST</p>
                         </div>
                         <div className="text-center">
                             <Image

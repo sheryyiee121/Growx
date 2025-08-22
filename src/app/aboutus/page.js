@@ -373,7 +373,7 @@ export default function AboutUsPage() {
                             <div className="space-y-3">
                                 <div className="flex items-start gap-3">
                                     <Image src="/images/phone.png" alt="Phone" width={20} height={20} className="w-5 h-5 object-contain mt-0.5 filter brightness-0 invert" />
-                                    <span className="text-gray-400">+918961142973</span>
+                                    <span className="text-gray-400">+91 896 114 2973</span>
                                 </div>
                                 <div className="flex items-start gap-3">
                                     <Image src="/images/email.png" alt="Email" width={20} height={20} className="w-5 h-5 object-contain mt-0.5 filter brightness-0 invert" />

@@ -13,8 +13,8 @@ export default function ContactPage() {
         {
             image: '/images/phone.png',
             title: 'Phone',
-            detail: '+918961142973',
-            description: '8:30am Est to 7:30pm Est',
+            detail: '+91 896 114 2973',
+            description: '8.30 AM to 07.30 PM EST',
             color: 'bg-green-500'
         },
         {
@@ -174,7 +174,7 @@ export default function ContactPage() {
                                             height={20}
                                             className="w-4 h-4 sm:w-5 sm:h-5 object-contain mt-0.5 flex-shrink-0"
                                         />
-                                        <span className="font-medium text-gray-900 text-sm sm:text-base break-words leading-relaxed">+918961142973</span>
+                                        <span className="font-medium text-gray-900 text-sm sm:text-base break-words leading-relaxed">+91 896 114 2973</span>
                                     </div>
                                     <div className="flex items-start gap-3">
                                         <Image
@@ -228,7 +228,7 @@ export default function ContactPage() {
                                             height={20}
                                             className="w-4 h-4 sm:w-5 sm:h-5 object-contain mt-0.5 flex-shrink-0"
                                         />
-                                        <span className="font-medium text-gray-900 text-sm sm:text-base break-words leading-relaxed">Mon-Fri, 9am-6pm IST</span>
+                                        <span className="font-medium text-gray-900 text-sm sm:text-base break-words leading-relaxed">Mon-Fri, 8.30 AM to 07.30 PM EST</span>
                                     </div>
                                 </div>
                             </div>

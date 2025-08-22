@@ -44,7 +44,7 @@ export default function FAQPage() {
         },
         {
             question: "How do I get started with your services?",
-            answer: "Getting started is easy! You can contact us at +918961142973, email us, or use our contact form. We&apos;ll discuss your business needs and show you our available lead inventory. Choose from our high-quality leads across multiple verticals."
+            answer: "Getting started is easy! You can contact us at +91 896 114 2973, email us, or use our contact form. We&apos;ll discuss your business needs and show you our available lead inventory. Choose from our high-quality leads across multiple verticals."
         },
         {
             question: "Do you offer customized solutions for specific industries?",
@@ -149,7 +149,7 @@ export default function FAQPage() {
                                 <Phone className="w-8 h-8 text-white" />
                             </div>
                             <h3 className="text-xl font-bold text-gray-900 mb-3">Call Us</h3>
-                            <p className="text-gray-600 mb-2">+918961142973</p>
+                            <p className="text-gray-600 mb-2">+91 896 114 2973</p>
                             <p className="text-sm text-gray-500">8.30 AM to 07.30 PM EST</p>
                         </div>
 
@@ -200,7 +200,7 @@ export default function FAQPage() {
                                 className="w-8 h-8 object-contain mx-auto mb-4"
                             />
                             <h3 className="text-lg font-semibold text-gray-900 mb-2">Call Us</h3>
-                            <p className="text-gray-600">+918961142973</p>
+                            <p className="text-gray-600">+91 896 114 2973</p>
                             <p className="text-sm text-gray-500">8.30 AM to 07.30 PM EST</p>
                         </div>
                         <div className="text-center">

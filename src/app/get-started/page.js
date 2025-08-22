@@ -189,7 +189,7 @@ export default function GetStartedPage() {
                                             <span className="font-medium text-gray-900">www.growxmarketingservices@gmail.com</span>
                                         </div>
                                         <div className="text-sm text-gray-600 mt-2">
-                                            Business Hours: 9:00 AM to 6:00 PM IST
+                                            Business Hours: 8.30 AM to 07.30 PM EST
                                         </div>
                                     </div>
                                 </div>
