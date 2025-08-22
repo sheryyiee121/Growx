@@ -27,8 +27,8 @@ export default function ContactPage() {
         {
             image: '/images/visitus.png',
             title: 'Office',
-            detail: 'Bhavya Corporate Tower, Vibhuti Khand, Lucknow, Uttar Pradesh, Gomti Nagar, Vibhuti Khand-226010',
-            description: '123 Business District, Suite 400',
+            detail: 'Bhavya Corporate Tower, Vibhuti Khand, Gomti Nagar, Lucknow, Uttar Pradesh - 226010',
+            description: 'Business District, Professional Center',
             color: 'bg-purple-500'
         },
 
@@ -87,6 +87,7 @@ export default function ContactPage() {
                                     className="w-4 h-4 sm:w-5 sm:h-5 object-contain filter brightness-0 invert"
                                 />
                             </button>
+
                             <button className="border-2 border-gray-300 text-gray-700 px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg transition-all duration-500 hover:border-green-700 hover:text-green-700 hover:scale-105 active:scale-95 transform">
                                 Send Message
                             </button>
@@ -128,10 +129,10 @@ export default function ContactPage() {
                         {/* Contact Form */}
                         <ContactForm
                             title="Send us a message"
-                            description="Fill out the form below and we'll get back to you within 24 hours."
+                            description="Fill out the form below and we&apos;ll get back to you within 24 hours."
                             submitButtonText="Send Message"
                             successTitle="Thank You!"
-                            successMessage="We've received your message and will get back to you within 24 hours."
+                            successMessage="We&apos;ve received your message and will get back to you within 24 hours."
                         />
 
                         {/* Features & Contact Info */}
@@ -190,7 +191,7 @@ export default function ContactPage() {
                                             href="https://teams.live.com/l/invite/FEAs9c1l7U5gkj8PQE?v=g1"
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="inline-flex items-center gap-2 bg-gray-900 hover:bg-gray-800 text-white px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:scale-105 shadow-sm"
+                                            className="inline-flex items-center justify-center gap-2 bg-gray-900 hover:bg-gray-800 text-white px-6 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:scale-105 shadow-sm min-w-[140px]"
                                         >
                                             <svg
                                                 className="w-4 h-4"
@@ -207,7 +208,7 @@ export default function ContactPage() {
                                             href="https://www.linkedin.com/in/rahul-yadav-0654101b2?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="inline-flex items-center gap-2 bg-gray-900 hover:bg-gray-800 text-white px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:scale-105 shadow-sm"
+                                            className="inline-flex items-center justify-center gap-2 bg-gray-900 hover:bg-gray-800 text-white px-6 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:scale-105 shadow-sm min-w-[140px]"
                                         >
                                             <svg
                                                 className="w-4 h-4"
@@ -227,7 +228,7 @@ export default function ContactPage() {
                                             height={20}
                                             className="w-4 h-4 sm:w-5 sm:h-5 object-contain mt-0.5 flex-shrink-0"
                                         />
-                                        <span className="font-medium text-gray-900 text-sm sm:text-base break-words leading-relaxed">Mon-Fri, 8am-6pm EST</span>
+                                        <span className="font-medium text-gray-900 text-sm sm:text-base break-words leading-relaxed">Mon-Fri, 9am-6pm IST</span>
                                     </div>
                                 </div>
                             </div>

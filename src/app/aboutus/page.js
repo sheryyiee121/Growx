@@ -184,14 +184,14 @@ export default function AboutUsPage() {
 
 
                                         {/* Contact Buttons */}
-                                        <div className="flex items-center justify-center lg:justify-start gap-3 mt-4">
+                                        <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 mt-4">
                                             <a
                                                 href="https://teams.live.com/l/invite/FEAs9c1l7U5gkj8PQE?v=g1"
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                className="inline-flex items-center gap-2 bg-gray-900 hover:bg-gray-800 text-white px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:scale-105 shadow-sm min-w-[120px] justify-center"
+                                                className="inline-flex items-center gap-2 bg-gray-900 hover:bg-gray-800 text-white px-3 py-2 sm:px-4 sm:py-2 rounded-lg text-xs sm:text-sm font-medium transition-all duration-300 hover:scale-105 shadow-sm w-full sm:w-auto sm:min-w-[120px] justify-center"
                                             >
-                                                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                                <svg className="w-3 h-3 sm:w-4 sm:h-4" fill="currentColor" viewBox="0 0 24 24">
                                                     <path d="M20.75 8.25V5.75a1.75 1.75 0 0 0-1.75-1.75h-14A1.75 1.75 0 0 0 3.25 5.75v12.5c0 .966.784 1.75 1.75 1.75h14a1.75 1.75 0 0 0 1.75-1.75V13.5L24 16V8l-3.25 2.25Z" />
                                                 </svg>
                                                 Join Teams
@@ -200,9 +200,9 @@ export default function AboutUsPage() {
                                                 href="https://www.linkedin.com/in/rahul-yadav-0654101b2?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                className="inline-flex items-center gap-2 bg-gray-900 hover:bg-gray-800 text-white px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:scale-105 shadow-sm min-w-[120px] justify-center"
+                                                className="inline-flex items-center gap-2 bg-gray-900 hover:bg-gray-800 text-white px-3 py-2 sm:px-4 sm:py-2 rounded-lg text-xs sm:text-sm font-medium transition-all duration-300 hover:scale-105 shadow-sm w-full sm:w-auto sm:min-w-[120px] justify-center"
                                             >
-                                                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                                <svg className="w-3 h-3 sm:w-4 sm:h-4" fill="currentColor" viewBox="0 0 24 24">
                                                     <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
                                                 </svg>
                                                 LinkedIn
@@ -305,8 +305,11 @@ export default function AboutUsPage() {
                         Let&apos;s discuss how our expertise can drive sustainable growth for your business through proven marketing strategies.
                     </p>
                     <div className="flex flex-col sm:flex-row justify-center gap-4">
-                        <button className="bg-white text-green-700 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-500 hover:bg-gray-100 hover:scale-105 active:scale-95 transform">
-                            Get Started Today
+                        <button
+                            onClick={() => window.location.href = '/#get-started-form'}
+                            className="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-500 hover:scale-105 active:scale-95 transform"
+                        >
+                            Contact Us
                         </button>
                         <button className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-500 hover:bg-white hover:text-green-700 hover:scale-105 active:scale-95 transform">
                             Learn More
@@ -384,7 +387,7 @@ export default function AboutUsPage() {
                         </div>
                     </div>
 
-                    <div className="border-t border-gray-800 pt-8 mt-12 text-center">
+                    <div className="border-t border-gray-800 pt-4 mt-6 text-center">
                         <p className="text-gray-400">
                             © 2024 GrowX Marketing Services. All rights reserved. |
 

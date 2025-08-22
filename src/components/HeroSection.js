@@ -22,8 +22,8 @@ export default function HeroSection() {
                             Get Premium Leads<br />
                             That Convert
                         </h1>
-                        <p className="text-lg sm:text-xl text-gray-600 leading-relaxed max-w-lg transition-all duration-500 hover:text-gray-700 mx-auto lg:mx-0 text-justify">
-                            We sell high-quality, verified leads across multiple verticals. Purchase exclusive leads from our Pay-Per-Call campaigns and lead generation systems. Quality guaranteed.
+                        <p className="text-lg sm:text-xl text-gray-600 leading-relaxed max-w-lg transition-all duration-500 hover:text-gray-700 mx-auto lg:mx-0">
+                            We sell <span className="font-bold text-gray-800">high-quality, verified leads</span> across multiple verticals. Purchase <span className="font-bold text-gray-800">exclusive leads</span> from our Pay-Per-Call campaigns and lead generation systems. <span className="font-bold text-green-600">Quality guaranteed.</span>
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                             <button
@@ -33,12 +33,12 @@ export default function HeroSection() {
                                     window.open(url, '_blank');
                                 }}
                                 className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all duration-500 hover:scale-105 hover:shadow-xl active:scale-95 transform focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 flex items-center justify-center gap-3"
-
                             >
-
                                 Buy Premium Leads
                                 <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true" />
                             </button>
+
+
                         </div>
 
                         {/* Social Proof */}

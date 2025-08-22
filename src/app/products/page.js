@@ -132,6 +132,32 @@ export default function ProductsPage() {
             popular: false,
             color: 'bg-teal-500',
             image: '/images/call.jpg'
+        },
+        {
+            id: 'legal-campaigns',
+            title: 'Legal Campaigns',
+            description: 'Comprehensive legal services and disability insurance campaigns with specialized expertise',
+            icon: Shield,
+
+            features: [
+                'Social Security Disability Insurance',
+                'Legal consultation services',
+                'Disability claim assistance',
+                'Legal document preparation',
+                'Court representation support',
+                'Claims processing guidance'
+            ],
+            benefits: [
+                'Expert legal guidance',
+                'Higher success rates for claims',
+                'Professional representation',
+                'Comprehensive case management',
+                'Specialized legal expertise',
+                'Regulatory compliance'
+            ],
+            popular: false,
+            color: 'bg-indigo-500',
+            image: '/social.jpg'
         }
     ];
 
@@ -280,7 +306,10 @@ export default function ProductsPage() {
 
                     <div className="text-center mt-16">
                         <p className="text-green-100 mb-6">Ready to accelerate your business growth?</p>
-                        <button className="bg-white text-green-600 hover:bg-green-50 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-500 hover:scale-105 hover:shadow-lg">
+                        <button
+                            onClick={() => window.location.href = '/#get-started-form'}
+                            className="bg-white text-green-600 hover:bg-green-50 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-500 hover:scale-105 hover:shadow-lg"
+                        >
                             Get Started Today
                         </button>
                     </div>
@@ -401,11 +430,17 @@ export default function ProductsPage() {
                     <p className="text-green-100 mb-8 max-w-2xl mx-auto text-lg">
                         Join hundreds of successful businesses who purchase our premium leads to grow their customer base and increase revenue.
                     </p>
-                    <div className="flex justify-center space-x-4">
+                    <div className="flex flex-col sm:flex-row justify-center gap-4">
                         <button className="bg-white text-green-700 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-500 hover:bg-gray-100 hover:scale-105 active:scale-95 transform">
                             Get Leads Today
                         </button>
 
+                        <button
+                            onClick={() => window.location.href = '/#get-started-form'}
+                            className="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-500 hover:scale-105 active:scale-95 transform"
+                        >
+                            Contact Sales
+                        </button>
                     </div>
                 </div>
             </section>

@@ -174,6 +174,7 @@ export default function ServicesPage() {
             bgColor: "bg-indigo-50"
         },
 
+
     ];
 
 
@@ -441,6 +442,15 @@ export default function ServicesPage() {
                         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                             Ready to purchase high-quality leads? Contact us today to browse our available lead inventory and find the perfect leads for your business growth.
                         </p>
+
+                        <div className="mt-8">
+                            <button
+                                onClick={() => window.location.href = '/#get-started-form'}
+                                className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-500 hover:scale-105 active:scale-95 transform"
+                            >
+                                Contact Us
+                            </button>
+                        </div>
                     </div>
 
                     <div className="grid lg:grid-cols-3 gap-8 max-w-4xl mx-auto">
@@ -454,7 +464,7 @@ export default function ServicesPage() {
                             />
                             <h3 className="text-lg font-semibold text-gray-900 mb-2">Call Us</h3>
                             <p className="text-gray-600">+918961142973</p>
-                            <p className="text-sm text-gray-500">8:30am est to 7:30pm est</p>
+                            <p className="text-sm text-gray-500">9:00am to 6:00pm IST</p>
                         </div>
                         <div className="text-center">
                             <Image

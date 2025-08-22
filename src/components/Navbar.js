@@ -3,6 +3,7 @@
 import { useState, useCallback, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 
 /**
@@ -12,38 +13,33 @@ import { Menu, X } from 'lucide-react';
 export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
+    const pathname = usePathname();
 
-    // Optimized smooth scrolling function
+    // Simple scroll to section function
     const scrollToSection = useCallback((sectionId) => {
-        const element = document.getElementById(sectionId);
-
-        if (element) {
-            const navbarHeight = 80; // h-20 = 80px
-            const elementPosition = element.offsetTop - navbarHeight;
-            const currentPosition = window.pageYOffset;
-            const distance = elementPosition - currentPosition;
-            const duration = 1200; // 1.2 seconds for smooth animation
-            let start = null;
-
-            function animation(currentTime) {
-                if (start === null) start = currentTime;
-                const timeElapsed = currentTime - start;
-                const progress = Math.min(timeElapsed / duration, 1);
-
-                // Easing function for smooth animation
-                const easeInOutCubic = t => t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
-                const run = easeInOutCubic(progress);
-
-                window.scrollTo(0, currentPosition + distance * run);
-
-                if (timeElapsed < duration) {
-                    requestAnimationFrame(animation);
+        // Wait a bit for the page to be fully loaded
+        setTimeout(() => {
+            if (typeof window !== 'undefined' && typeof document !== 'undefined') {
+                const element = document.getElementById(sectionId);
+                if (element) {
+                    console.log('Element found, scrolling...');
+                    // Use scrollIntoView for better compatibility
+                    element.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Additional scroll up to account for navbar
+                    setTimeout(() => {
+                        window.scrollBy({
+                            top: -80,
+                            behavior: 'smooth'
+                        });
+                    }, 100);
+                } else {
+                    console.log('Element not found:', sectionId);
                 }
             }
-
-            requestAnimationFrame(animation);
-        }
-
+        }, 100);
         // Close mobile menu after clicking
         setIsMenuOpen(false);
     }, []);
@@ -51,16 +47,20 @@ export default function Navbar() {
     // Handle scroll effect for navbar background
     useEffect(() => {
         const handleScroll = () => {
-            setIsScrolled(window.scrollY > 10);
+            if (typeof window !== 'undefined') {
+                setIsScrolled(window.scrollY > 10);
+            }
         };
 
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
+        if (typeof window !== 'undefined') {
+            window.addEventListener('scroll', handleScroll);
+            return () => window.removeEventListener('scroll', handleScroll);
+        }
     }, []);
 
     // Handle hash navigation when page loads
     useEffect(() => {
-        if (window.location.hash) {
+        if (typeof window !== 'undefined' && window.location.hash) {
             const sectionId = window.location.hash.substring(1);
             setTimeout(() => {
                 scrollToSection(sectionId);
@@ -89,6 +89,20 @@ export default function Navbar() {
         const item = navigationItems.find(item => item.id === sectionId);
         if (item) {
             window.location.href = item.href;
+        }
+        // Close mobile menu after clicking
+        setIsMenuOpen(false);
+    };
+
+    // Handle Get Started button click
+    const handleGetStarted = () => {
+        // If we're not on the homepage, navigate there first
+        if (pathname !== '/') {
+            window.location.href = '/#get-started-form';
+        } else {
+            // If we're already on homepage, just scroll to the form
+            console.log('Scrolling to form section...');
+            scrollToSection('get-started-form');
         }
         // Close mobile menu after clicking
         setIsMenuOpen(false);
@@ -133,12 +147,17 @@ export default function Navbar() {
                         ))}
                     </div>
 
-                    {/* Get Started Button - Desktop */}
-                    <div className="hidden lg:block">
-                        <button className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-full font-semibold text-sm transition-all duration-300 hover:scale-105 hover:shadow-lg">
-                            Get Started
-                        </button>
-                    </div>
+                    {/* Get Started Button - Desktop - Only show on homepage */}
+                    {pathname === '/' && (
+                        <div className="hidden lg:block">
+                            <button
+                                onClick={handleGetStarted}
+                                className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-full font-semibold text-sm transition-all duration-300 hover:scale-105 hover:shadow-lg"
+                            >
+                                Get Started
+                            </button>
+                        </div>
+                    )}
 
                     {/* Mobile Menu Button */}
                     <div className="lg:hidden ml-auto">
@@ -177,12 +196,17 @@ export default function Navbar() {
                             </button>
                         ))}
 
-                        {/* Get Started Button - Mobile */}
-                        <div className="px-4 py-4">
-                            <button className="w-full bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-full font-semibold text-sm transition-all duration-300">
-                                Get Started
-                            </button>
-                        </div>
+                        {/* Get Started Button - Mobile - Only show on homepage */}
+                        {pathname === '/' && (
+                            <div className="px-4 py-4">
+                                <button
+                                    onClick={handleGetStarted}
+                                    className="w-full bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-full font-semibold text-sm transition-all duration-300"
+                                >
+                                    Get Started
+                                </button>
+                            </div>
+                        )}
                     </div>
                 </div>
             </div>

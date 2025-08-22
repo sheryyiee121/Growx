@@ -178,9 +178,16 @@ export default function FAQPage() {
                                 <div className="absolute bottom-0 left-0 w-full h-2 bg-green-500 opacity-60 transform -skew-x-12"></div>
                             </span>
                         </h2>
-                        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                        <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
                             Contact us today to browse our quality lead inventory and let our experts help you find the perfect leads to scale your business.
                         </p>
+
+                        <button
+                            onClick={() => window.location.href = '/#get-started-form'}
+                            className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-500 hover:scale-105 active:scale-95 transform"
+                        >
+                            Get Started Today
+                        </button>
                     </div>
 
                     <div className="grid lg:grid-cols-3 gap-8 max-w-4xl mx-auto">

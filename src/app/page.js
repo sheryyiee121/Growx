@@ -297,7 +297,7 @@ export default function Home() {
 
           <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 max-w-7xl mx-auto">
             {/* Contact Form */}
-            <div className="flex-1 animate-slide-up">
+            <div id="get-started-form" className="flex-1 animate-slide-up">
               <ContactForm
                 title="Send us a message"
                 description="Ready to get started? Fill out the form below and we&apos;ll get back to you within 24 hours."
@@ -319,7 +319,7 @@ export default function Home() {
                         <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-green-500 mt-0.5 sm:mt-0 flex-shrink-0" />
                         <div className="min-w-0 flex-1">
                           <p className="font-semibold text-gray-900 text-sm sm:text-base mb-1">Phone</p>
-                          <p className="text-gray-600 text-sm sm:text-base break-words leading-relaxed">+91 (555) 123-4567</p>
+                          <p className="text-gray-600 text-sm sm:text-base break-words leading-relaxed">+91 896 114 2973</p>
                         </div>
                       </div>
                       <div className="flex items-start gap-3 sm:gap-4">
@@ -340,7 +340,7 @@ export default function Home() {
                         <Clock className="w-5 h-5 sm:w-6 sm:h-6 text-green-500 mt-0.5 sm:mt-0 flex-shrink-0" />
                         <div className="min-w-0 flex-1">
                           <p className="font-semibold text-gray-900 text-sm sm:text-base mb-1">Business Hours</p>
-                          <p className="text-gray-600 text-sm sm:text-base break-words leading-relaxed">8.30 AM to 07.30 PM EST</p>
+                          <p className="text-gray-600 text-sm sm:text-base break-words leading-relaxed">9:00 AM to 6:00 PM IST</p>
                         </div>
                       </div>
                     </div>
@@ -490,7 +490,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+          <div className="border-t border-gray-800 mt-6 pt-4 text-center text-gray-400">
             <p>&copy; 2025 GrowX Marketing Services. All rights reserved.
               {/* <a href="/privacy-policy" className="hover:text-white transition-colors ml-1">Privacy Policy</a> | */}
               {/* <a href="/terms-of-service" className="hover:text-white transition-colors ml-1">Terms of Service</a> */}
