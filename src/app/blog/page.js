@@ -223,9 +223,7 @@ The automation system allowed them to maintain personalization at scale while fr
                                             <div className="text-green-200 text-sm">Qualification Rate</div>
                                         </div>
                                     </div>
-                                    <button className="bg-white text-green-700 px-8 py-3 rounded-lg font-semibold hover:bg-green-50 transition-all duration-300">
-                                        Read Full Case Study
-                                    </button>
+
                                 </div>
                                 <div className="bg-green-800 p-12 flex items-center justify-center">
                                     <div className="text-center text-white">
@@ -286,15 +284,11 @@ The automation system allowed them to maintain personalization at scale while fr
                                         {post.excerpt}
                                     </p>
 
-                                    <div className="flex items-center justify-between">
+                                    <div className="flex items-center">
                                         <div className="flex items-center text-sm text-gray-500">
                                             <User className="w-4 h-4 mr-2" />
                                             {post.author}
                                         </div>
-                                        <button className="text-green-600 hover:text-green-700 font-semibold text-sm flex items-center">
-                                            Read More
-                                            <ArrowRight className="w-4 h-4 ml-1" />
-                                        </button>
                                     </div>
                                 </div>
                             </article>
