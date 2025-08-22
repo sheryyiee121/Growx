@@ -389,7 +389,7 @@ export default function AboutUsPage() {
 
                     <div className="border-t border-gray-800 pt-4 mt-6 text-center">
                         <p className="text-gray-400">
-                            © 2024 GrowX Marketing Services. All rights reserved. |
+                            © 2024 GrowX Marketing Services. All rights reserved.
 
                         </p>
                     </div>

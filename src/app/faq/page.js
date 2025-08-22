@@ -12,19 +12,19 @@ export default function FAQPage() {
     const faqData = [
         {
             question: "What services does GrowX Marketing Services offer?",
-            answer: "We offer comprehensive marketing and business services including lead generation, sales optimization, marketing automation, cold calling services, sales team training, and specialized insurance services like ACA enrollment, Final Expense Insurance, Auto Insurance, SSDI assistance, and Debt Settlement."
+            answer: "We offer comprehensive insurance and financial services including ACA enrollment, Final Expense Insurance, Auto Insurance, SSDI assistance, Debt Settlement, Pay Per Call campaigns, and Education Services."
         },
         {
-            question: "How does your lead generation process work?",
-            answer: "Our lead generation process involves advanced targeting and filtering to identify qualified prospects in your industry. We use multiple channels including digital marketing, cold outreach, and referral networks to generate high-quality leads that are verified in real-time before delivery to you."
+            question: "How does your Pay Per Call process work?",
+            answer: "Our Pay Per Call process involves advanced targeting and filtering to identify qualified prospects in your industry. We use multiple channels including digital marketing, referral networks, and targeted campaigns to generate high-quality phone leads that are verified in real-time before delivery to you."
         },
         {
-            question: "What makes your cold calling service different?",
-            answer: "Our professional cold calling service features experienced sales representatives who use proven scripts and techniques. We provide call recording and analysis, appointment setting, performance analytics, and weekly strategy reviews to ensure optimal results."
+            question: "What makes your Pay Per Call service different?",
+            answer: "Our professional Pay Per Call service features experienced campaign management, proven targeting techniques, real-time call tracking and analytics, quality call filtering, and performance optimization to ensure optimal results and ROI."
         },
         {
-            question: "Do you provide training for sales teams?",
-            answer: "Yes, we offer comprehensive sales team training programs that include weekly training sessions, customized sales playbooks, role-playing exercises, performance tracking, one-on-one coaching, and sales process optimization tailored to your business needs."
+            question: "Do you provide customized solutions for different industries?",
+            answer: "Yes, we offer comprehensive customized solutions that include industry-specific targeting, tailored campaign strategies, specialized compliance requirements, and performance optimization tailored to your business needs and industry regulations."
         },
         {
             question: "How can you help with ACA (Affordable Care Act) enrollment?",
@@ -44,7 +44,7 @@ export default function FAQPage() {
         },
         {
             question: "How do I get started with your services?",
-            answer: "Getting started is easy! You can contact us at +91 896 114 2973, email us, or use our contact form. We&apos;ll discuss your business needs and show you our available lead inventory. Choose from our high-quality leads across multiple verticals."
+            answer: "Getting started is easy! You can contact us at +91 896 114 2973, email us, or use our contact form. We&apos;ll discuss your business needs and show you our available services and campaigns. Choose from our high-quality insurance and financial services across multiple verticals."
         },
         {
             question: "Do you offer customized solutions for specific industries?",

@@ -133,32 +133,7 @@ export default function ProductsPage() {
             color: 'bg-teal-500',
             image: '/images/call.jpg'
         },
-        {
-            id: 'legal-campaigns',
-            title: 'Legal Campaigns',
-            description: 'Comprehensive legal services and disability insurance campaigns with specialized expertise',
-            icon: Shield,
 
-            features: [
-                'Social Security Disability Insurance',
-                'Legal consultation services',
-                'Disability claim assistance',
-                'Legal document preparation',
-                'Court representation support',
-                'Claims processing guidance'
-            ],
-            benefits: [
-                'Expert legal guidance',
-                'Higher success rates for claims',
-                'Professional representation',
-                'Comprehensive case management',
-                'Specialized legal expertise',
-                'Regulatory compliance'
-            ],
-            popular: false,
-            color: 'bg-indigo-500',
-            image: '/social.jpg'
-        }
     ];
 
     const stats = [

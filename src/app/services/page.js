@@ -36,7 +36,6 @@ export default function ServicesPage() {
             benefits: [
                 "Save up to 90% on premiums",
                 "Access to quality healthcare"
-
             ],
             color: "bg-blue-500",
             bgColor: "bg-blue-50"
@@ -174,7 +173,27 @@ export default function ServicesPage() {
             bgColor: "bg-indigo-50"
         },
 
+    ];
 
+    // All services for the form dropdown (including the ones not shown as cards)
+    const allServicesForForm = [
+        'ACA (Affordable Care Act)',
+        'Final Expense Insurance',
+        'Auto Insurance',
+        'SSDI (Social Security Disability Insurance)',
+        'Debt Settlement',
+        'Pay Per Call',
+        'Education Services',
+        'Lead Generation',
+        'Cold Calling Services',
+        'Sales Team Training',
+        'Marketing Automation',
+        'Business Consulting',
+        'Advertising',
+        'Outsourcing',
+        'Telecommunications',
+        'Inbound & Outbound Call Services',
+        'Custom Solutions'
     ];
 
 
@@ -321,7 +340,7 @@ export default function ServicesPage() {
 
                             {/* Contact Form */}
                             <ServicesForm
-                                services={services}
+                                services={allServicesForForm}
                                 selectedService={services[activeService]?.title || ''}
                                 title="Get Expert Guidance"
                                 description="Fill out the form below and we'll get back to you within 24 hours."

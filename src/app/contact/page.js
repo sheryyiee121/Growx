@@ -28,7 +28,7 @@ export default function ContactPage() {
             image: '/images/visitus.png',
             title: 'Office',
             detail: 'Bhavya Corporate Tower, Vibhuti Khand, Gomti Nagar, Lucknow, Uttar Pradesh - 226010',
-            description: 'Business District, Professional Center',
+            description: '',
             color: 'bg-purple-500'
         },
 
