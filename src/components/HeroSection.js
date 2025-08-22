@@ -35,10 +35,8 @@ export default function HeroSection() {
                                 className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all duration-500 hover:scale-105 hover:shadow-xl active:scale-95 transform focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 flex items-center justify-center gap-3"
                             >
                                 Buy Premium Leads
-                                <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true" />
+
                             </button>
-
-
                         </div>
 
                         {/* Social Proof */}
@@ -82,6 +80,8 @@ export default function HeroSection() {
 
                                 {/* Subtle border glow */}
                                 <div className="absolute inset-0 rounded-2xl ring-1 ring-white/20 group-hover:ring-white/30 transition-all duration-500"></div>
+
+
                             </div>
 
                             {/* Subtle floating elements */}

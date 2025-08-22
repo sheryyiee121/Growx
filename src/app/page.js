@@ -114,10 +114,16 @@ export default function Home() {
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8 sm:mb-12">
-                <button className="bg-green-600 hover:bg-green-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-bold text-base sm:text-lg transition-colors">
+                <button
+                  onClick={() => window.location.href = '/contact'}
+                  className="bg-green-600 hover:bg-green-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-bold text-base sm:text-lg transition-colors"
+                >
                   Start Lead Campaign
                 </button>
-                <button className="bg-green-500/20 hover:bg-green-500/30 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-bold text-base sm:text-lg border border-green-300/30 transition-colors">
+                <button
+                  onClick={() => window.location.href = '/blog'}
+                  className="bg-green-500/20 hover:bg-green-500/30 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-bold text-base sm:text-lg border border-green-300/30 transition-colors"
+                >
                   View Case Studies
                 </button>
               </div>

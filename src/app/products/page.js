@@ -190,12 +190,18 @@ export default function ProductsPage() {
                             Browse our specialized industry verticals where we sell high-quality, verified leads. Purchase leads from our proven campaigns across multiple sectors.
                         </p>
                         <div className="flex justify-center space-x-4 animate-slide-up" style={{ animationDelay: '0.4s' }}>
-                            <button className="bg-green-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-500 hover:bg-green-800 hover:scale-105 hover:shadow-lg active:scale-95 transform flex items-center gap-2">
-                                View Verticals
+                            <button
+                                onClick={() => window.location.href = '/contact'}
+                                className="bg-green-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-500 hover:bg-green-800 hover:scale-105 hover:shadow-lg active:scale-95 transform flex items-center gap-2"
+                            >
+                                Start Lead Campaign
                                 <ArrowRight className="w-5 h-5" />
                             </button>
-                            <button className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-500 hover:border-green-700 hover:text-green-700 hover:scale-105 active:scale-95 transform">
-                                Schedule Demo
+                            <button
+                                onClick={() => window.location.href = '/blog'}
+                                className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-500 hover:border-green-700 hover:text-green-700 hover:scale-105 active:scale-95 transform"
+                            >
+                                View Case Studies
                             </button>
                         </div>
                     </div>
@@ -432,15 +438,18 @@ export default function ProductsPage() {
                         Join hundreds of successful businesses who purchase our premium leads to grow their customer base and increase revenue.
                     </p>
                     <div className="flex flex-col sm:flex-row justify-center gap-4">
-                        <button className="bg-white text-green-700 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-500 hover:bg-gray-100 hover:scale-105 active:scale-95 transform">
-                            Get Leads Today
+                        <button
+                            onClick={() => window.location.href = '/contact'}
+                            className="bg-white text-green-700 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-500 hover:bg-gray-100 hover:scale-105 active:scale-95 transform"
+                        >
+                            Start Lead Campaign
                         </button>
 
                         <button
-                            onClick={() => window.location.href = '/#get-started-form'}
+                            onClick={() => window.location.href = '/blog'}
                             className="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-500 hover:scale-105 active:scale-95 transform"
                         >
-                            Contact Sales
+                            View Case Studies
                         </button>
                     </div>
                 </div>
