@@ -4,7 +4,7 @@
  */
 
 // Google Apps Script URL - Deployed script endpoint
-const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxsFJToHVTEIN8GA6Yrfkuoh7xDCrawGSeSyiXGbncxu0vCjwmcvkpuAt7WMOAqAvZnzw/exec';
+const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby11P7BusTMgxn0E9ZdSojC29AMdU2K4TlHawaFduwIpV8s6lB5ZkVNYZLhIScsd7S0fw/exec';
 
 /**
  * Submit form data to Google Sheets
