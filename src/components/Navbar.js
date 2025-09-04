@@ -28,10 +28,11 @@ export default function Navbar() {
                         behavior: 'smooth',
                         block: 'start'
                     });
-                    // Additional scroll up to account for navbar
+                    // Additional scroll up to account for navbar (adjusted for mobile)
                     setTimeout(() => {
+                        const offset = window.innerWidth < 640 ? -64 : -80; // Mobile: 64px, Desktop: 80px
                         window.scrollBy({
-                            top: -80,
+                            top: offset,
                             behavior: 'smooth'
                         });
                     }, 100);
@@ -115,17 +116,17 @@ export default function Navbar() {
             aria-label="Main navigation"
         >
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex items-center h-20">
+                <div className="flex items-center h-16 sm:h-18 lg:h-20">
                     {/* Logo Section */}
                     <div className="flex items-center space-x-4 flex-1 lg:flex-initial">
                         <Link href="/" className="block">
-                            <div className="w-20 h-20 relative">
+                            <div className="w-16 h-16 sm:w-18 sm:h-18 lg:w-20 lg:h-20 relative">
                                 <Image
                                     src="/images/logoupdated.png"
                                     alt="GrowX Marketing Services Logo"
                                     width={80}
                                     height={80}
-                                    className="rounded-lg object-cover transition-all duration-300 hover:scale-105"
+                                    className="w-full h-full rounded-lg object-cover transition-all duration-300 hover:scale-105"
                                     priority
                                 />
                             </div>

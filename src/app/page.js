@@ -5,7 +5,7 @@ import HeroSection from '../components/HeroSection';
 import ContactForm from '../components/ContactForm';
 import UpArrow from '../components/UpArrow';
 import FloatingWhatsApp from '../components/FloatingWhatsApp';
-import { Check, Star, Phone, Users, TrendingUp, Target, Zap, Shield, Mail, MapPin, Clock, Heart, Car, CreditCard, FileText, ArrowRight, Linkedin, Instagram } from 'lucide-react';
+import { Check, Star, Phone, Users, TrendingUp, Target, Zap, Shield, Mail, MapPin, Clock, Heart, Car, CreditCard, FileText, ArrowRight, Linkedin, Instagram, Facebook } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 
@@ -426,10 +426,20 @@ export default function Home() {
               Still have questions? We&apos;re here to help!
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
-              <button className="bg-green-500 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg transition-all duration-500 hover:bg-green-600 hover:scale-105 hover:shadow-lg active:scale-95 transform">
+              <button
+                onClick={() => window.location.href = '/contact'}
+                className="bg-green-500 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg transition-all duration-500 hover:bg-green-600 hover:scale-105 hover:shadow-lg active:scale-95 transform"
+              >
                 Contact Our Team
               </button>
-              <button className="border-2 border-gray-300 text-gray-700 px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg transition-all duration-500 hover:border-green-500 hover:text-green-600 hover:scale-105 active:scale-95 transform">
+              <button
+                onClick={() => {
+                  const message = encodeURIComponent("Hi! I'd like to schedule a call to discuss your lead generation services. When would be a good time?");
+                  const url = `https://wa.me/918961142973?text=${message}`;
+                  window.open(url, '_blank');
+                }}
+                className="border-2 border-gray-300 text-gray-700 px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg transition-all duration-500 hover:border-green-500 hover:text-green-600 hover:scale-105 active:scale-95 transform"
+              >
                 Schedule a Call
               </button>
             </div>
@@ -449,11 +459,14 @@ export default function Home() {
               </p>
               <h5 className="text-1xl font-semibold mb-3">Visit our Socials</h5>
               <div className="flex flex-wrap gap-2">
-                <a href="https://www.linkedin.com/in/rahul-yadav-0654101b2" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-600 transition-colors p-2 hover:bg-gray-800 rounded-full">
+                <a href="https://linkedin.com/company/growxmarketingservices" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-600 transition-colors p-2 hover:bg-gray-800 rounded-full">
                   <Linkedin className="w-4 h-4" />
                 </a>
-                <a href="https://www.instagram.com/growxmarketingservices?igsh=MWo5aGRpbWJsZ2UxNA==" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-pink-500 transition-colors p-2 hover:bg-gray-800 rounded-full">
+                <a href="https://www.instagram.com/growxmarketingservices" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-pink-500 transition-colors p-2 hover:bg-gray-800 rounded-full">
                   <Instagram className="w-4 h-4" />
+                </a>
+                <a href="https://www.facebook.com/share/1QMBzmyycn/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-500 transition-colors p-2 hover:bg-gray-800 rounded-full">
+                  <Facebook className="w-4 h-4" />
                 </a>
               </div>
             </div>

@@ -96,9 +96,9 @@ export default function RootLayout({ children }) {
                 "availableLanguage": "English"
               },
               "sameAs": [
-                "https://linkedin.com/company/growx-marketing",
-                "https://twitter.com/growxmarketing",
-                "https://facebook.com/growxmarketing"
+                "https://linkedin.com/company/growxmarketingservices",
+                "https://www.instagram.com/growxmarketingservices",
+                "https://www.facebook.com/share/1QMBzmyycn/"
               ]
             })
           }}

@@ -175,13 +175,21 @@ The automation system allowed them to maintain personalization at scale while fr
                         <p className="text-xl text-gray-600 leading-relaxed mb-8 animate-slide-up" style={{ animationDelay: '0.2s' }}>
                             Discover how our clients have achieved remarkable results through our lead generation and marketing services. Real stories, real results.
                         </p>
-                        <div className="flex justify-center space-x-4 animate-slide-up" style={{ animationDelay: '0.4s' }}>
-                            <button className="bg-green-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-500 hover:bg-green-800 hover:scale-105 hover:shadow-lg active:scale-95 transform flex items-center gap-2">
+                        <div className="flex justify-center animate-slide-up" style={{ animationDelay: '0.4s' }}>
+                            <button
+                                onClick={() => {
+                                    const articlesSection = document.getElementById('articles-section');
+                                    if (articlesSection) {
+                                        articlesSection.scrollIntoView({
+                                            behavior: 'smooth',
+                                            block: 'start'
+                                        });
+                                    }
+                                }}
+                                className="bg-green-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-500 hover:bg-green-800 hover:scale-105 hover:shadow-lg active:scale-95 transform flex items-center gap-2"
+                            >
                                 Read Case Studies
                                 <ArrowRight className="w-5 h-5" />
-                            </button>
-                            <button className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-500 hover:border-green-700 hover:text-green-700 hover:scale-105 active:scale-95 transform">
-                                Subscribe to Updates
                             </button>
                         </div>
                     </div>
@@ -241,7 +249,7 @@ The automation system allowed them to maintain personalization at scale while fr
             </section>
 
             {/* Blog Posts Grid */}
-            <section className="py-20 bg-gray-50">
+            <section id="articles-section" className="py-20 bg-gray-50">
                 <div className="container mx-auto px-6">
                     <div className="text-center mb-16">
                         <h2 className="text-4xl font-bold text-gray-900 mb-4">Latest Case Studies & Insights</h2>

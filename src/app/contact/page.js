@@ -77,7 +77,14 @@ export default function ContactPage() {
                             Ready to transform your business with our lead generation services? Let&apos;s discuss how we can help you achieve your sales goals.
                         </p>
                         <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
-                            <button className="bg-green-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg transition-all duration-500 hover:bg-green-800 hover:scale-105 hover:shadow-lg active:scale-95 transform flex items-center justify-center gap-2">
+                            <button
+                                onClick={() => {
+                                    const message = encodeURIComponent("Hi! I'd like to schedule a call to discuss your lead generation services. When would be a good time?");
+                                    const url = `https://wa.me/918961142973?text=${message}`;
+                                    window.open(url, '_blank');
+                                }}
+                                className="bg-green-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg transition-all duration-500 hover:bg-green-800 hover:scale-105 hover:shadow-lg active:scale-95 transform flex items-center justify-center gap-2"
+                            >
                                 Schedule Call
                                 <Image
                                     src="/images/phone.png"
@@ -88,7 +95,18 @@ export default function ContactPage() {
                                 />
                             </button>
 
-                            <button className="border-2 border-gray-300 text-gray-700 px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg transition-all duration-500 hover:border-green-700 hover:text-green-700 hover:scale-105 active:scale-95 transform">
+                            <button
+                                onClick={() => {
+                                    const formSection = document.getElementById('contact-form-section');
+                                    if (formSection) {
+                                        formSection.scrollIntoView({
+                                            behavior: 'smooth',
+                                            block: 'start'
+                                        });
+                                    }
+                                }}
+                                className="border-2 border-gray-300 text-gray-700 px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg transition-all duration-500 hover:border-green-700 hover:text-green-700 hover:scale-105 active:scale-95 transform"
+                            >
                                 Send Message
                             </button>
                         </div>
@@ -123,7 +141,7 @@ export default function ContactPage() {
             </section>
 
             {/* Contact Form & Features */}
-            <section className="py-16 sm:py-24 lg:py-32 bg-gray-50">
+            <section id="contact-form-section" className="py-16 sm:py-24 lg:py-32 bg-gray-50">
                 <div className="container mx-auto px-4 sm:px-6">
                     <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 max-w-6xl mx-auto">
                         {/* Contact Form */}
@@ -205,7 +223,7 @@ export default function ContactPage() {
                                     </div>
                                     <div className="flex items-start gap-3">
                                         <a
-                                            href="https://www.linkedin.com/in/rahul-yadav-0654101b2?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                                            href="https://linkedin.com/company/growxmarketingservices"
                                             target="_blank"
                                             rel="noopener noreferrer"
                                             className="inline-flex items-center justify-center gap-2 bg-gray-900 hover:bg-gray-800 text-white px-6 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:scale-105 shadow-sm min-w-[140px]"

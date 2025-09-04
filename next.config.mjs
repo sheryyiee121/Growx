@@ -83,8 +83,22 @@ const nextConfig = {
 
 
 
-    // Output configuration
-    output: 'standalone',
+    // Output configuration for static export
+    output: 'export',
+
+    // Static export configuration
+    trailingSlash: true,
+
+    // Disable image optimization for static export
+    images: {
+        unoptimized: true,
+        formats: ['image/webp', 'image/avif'],
+        deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+        imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+        minimumCacheTTL: 60,
+        dangerouslyAllowSVG: true,
+        contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+    },
 
     // Environment variables
     env: {
@@ -114,8 +128,7 @@ const nextConfig = {
         return config;
     },
 
-    // Trailing slash configuration
-    trailingSlash: false,
+
 
     // Base path (if needed for subdirectory deployment)
     // basePath: '',
