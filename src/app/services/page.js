@@ -464,7 +464,7 @@ export default function ServicesPage() {
 
                         <div className="mt-8">
                             <button
-                                onClick={() => window.location.href = '/#get-started-form'}
+                                onClick={() => window.location.href = '/contact'}
                                 className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-500 hover:scale-105 active:scale-95 transform"
                             >
                                 Contact Us

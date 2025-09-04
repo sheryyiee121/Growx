@@ -264,8 +264,15 @@ export default function ContactPage() {
                     <p className="text-green-100 mb-8 max-w-2xl mx-auto text-lg">
                         Don&apos;t wait any longer. Get in touch today and let&apos;s discuss our available lead inventory and how purchasing our quality leads can grow your business.
                     </p>
-                    <button className="bg-white text-green-700 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-500 hover:bg-gray-100 hover:scale-105 active:scale-95 transform flex items-center gap-2 mx-auto">
-                        Browse Lead Inventory
+                    <button
+                        onClick={() => {
+                            const message = encodeURIComponent("Hi! I'm interested in buying Pro+ leads. Can you show me your available lead inventory and pricing?");
+                            const url = `https://wa.me/918961142973?text=${message}`;
+                            window.open(url, '_blank');
+                        }}
+                        className="bg-white text-green-700 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-500 hover:bg-gray-100 hover:scale-105 active:scale-95 transform flex items-center gap-2 mx-auto"
+                    >
+                        Buy Pro+ Leads
                         <ArrowRight className="w-5 h-5" />
                     </button>
                 </div>
